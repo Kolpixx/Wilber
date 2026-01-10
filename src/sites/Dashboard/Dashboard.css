@@ -1,0 +1,27 @@
+#dashboard {
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+#dashboard > header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#dashboard > main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+@media (min-width: 600px) {
+    #dashboard > main {
+        gap: 50px;
+        justify-content: unset;
+    }
+}

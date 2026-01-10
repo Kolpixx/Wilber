@@ -1,3 +1,6 @@
+import { Ellipsis, History, ScrollText } from 'lucide-react';
+import { accentColor } from '../../../../consts';
+
 import './Entry.css'
 
 type Props = {
@@ -22,13 +25,38 @@ export default function Entry({ entry, entries, currentTime } : Props) {
 
     return (
         <div className="entry">
-            <h2>{entry}</h2>
-            <p>{timeDifferences.get("years")} years</p>
-            <p>{timeDifferences.get("months")} months</p>
-            <p>{timeDifferences.get("days")} days</p>
-            <p>{timeDifferences.get("hours")} hours</p>
-            <p>{timeDifferences.get("minutes")} minutes</p>
-            <p>{timeDifferences.get("seconds")} seconds</p>
+            <div className="entry-left">
+                <h2>{entry}</h2>
+                <div className="entry-time-data">
+                    <div>
+                        <p><span className="number-font">{timeDifferences.get("years")}</span> years</p>
+                        <p><span className="number-font">{timeDifferences.get("months")}</span> months</p>
+                        <p><span className="number-font">{timeDifferences.get("days")}</span> days</p>
+                    </div>
+                    <div>
+                        <p><span className="number-font">{timeDifferences.get("hours")}</span> hours</p>
+                        <p><span className="number-font">{timeDifferences.get("minutes")}</span> minutes</p>
+                        <p><span className="number-font">{timeDifferences.get("seconds")}</span> seconds</p>
+                    </div>
+                </div>
+            </div>
+            <div className="entry-right">
+                <Ellipsis
+                    size={32}
+                    color={accentColor}
+                    strokeWidth={1.75}
+                />
+                <ScrollText
+                    size={32}
+                    color={accentColor}
+                    strokeWidth={1.75}
+                />
+                <History
+                    size={32}
+                    color={accentColor}
+                    strokeWidth={1.75}
+                />
+            </div>
         </div>
     )
 }

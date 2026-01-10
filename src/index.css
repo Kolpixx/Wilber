@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Palanquin+Dark:wght@400;500;600;700&display=swap');
+
 *,
 *::before,
 *::after {
@@ -6,6 +8,29 @@
     box-sizing: border-box;
 }
 
+:root {
+  --accent: #000000;
+  --text: #000000;
+  --h1-font: "Palanquin Dark";
+  --default-font: "Inter";
+  --number-font: "JetBrains Mono";
+  }
+
 body {
   min-height: 100vh;
+}
+
+h1 {
+  font-family: var(--h1-font);
+  font-size: 3.7rem;
+  line-height: 3.7rem;
+  font-weight: 600;
+}
+
+h2 {
+  font-family: var(--default-font);
+}
+
+.number-font {
+  font-family: var(--number-font);
 }

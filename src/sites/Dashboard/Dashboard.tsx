@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 import { addEntry, removeEntry } from '../../utils'
+import { Menu } from 'lucide-react';
+import { accentColor } from '../../consts';
 import Entry from './components/Entry/Entry';
 
 import './Dashboard.css'
@@ -20,39 +22,49 @@ export default function Dashboard() {
     }, []);
 
     return (
-        <>
-            <form>
-                <input type="text" id="add-entry-input"></input>
-                <input type="submit" onClick={(e) => {{
-                    e.preventDefault();
-                    try {
-                        const input: HTMLInputElement | null = (document.getElementById("add-entry-input") as HTMLInputElement);
-                        input !== null && input.value !== null ? addEntry(input.value, setEntries) : console.error(new Error(`Element with id "add-entry-input" is null`));
-                    } catch (error) {
-                        console.error(error);
-                    }
-                }}} value="Add"></input>
-            </form>
-            <form>
-                <input type="text" id="remove-entry-input"></input>
-                <input type="submit" onClick={(e) => {{
-                    e.preventDefault();
-                    try {
-                        const input: HTMLInputElement | null = (document.getElementById("remove-entry-input") as HTMLInputElement);
-                        input !== null && input.value !== null ? removeEntry(input.value, setEntries) : console.error(new Error(`Element with id "remove-entry-input" is null`));
-                    } catch (error) {
-                        console.error(error);
-                    }
-                }}} value="Remove"></input>
-            </form>
-            {Object.keys(entries).map((entry, i) => 
-                <Entry
-                    key={i}
-                    entry={entry}
-                    entries={entries}
-                    currentTime={currentTime}
+        <div id="dashboard">
+            <header>
+                <h1>Wilber</h1>
+                <Menu
+                    size={36}
+                    color={accentColor}
+                    strokeWidth={2.5}
                 />
-            )}
-        </>
+            </header>
+            <main>
+                <form>
+                    <input type="text" id="add-entry-input"></input>
+                    <input type="submit" onClick={(e) => {{
+                        e.preventDefault();
+                        try {
+                            const input: HTMLInputElement | null = (document.getElementById("add-entry-input") as HTMLInputElement);
+                            input !== null && input.value !== null ? addEntry(input.value, setEntries) : console.error(new Error(`Element with id "add-entry-input" is null`));
+                        } catch (error) {
+                            console.error(error);
+                        }
+                    }}} value="Add"></input>
+                </form>
+                <form>
+                    <input type="text" id="remove-entry-input"></input>
+                    <input type="submit" onClick={(e) => {{
+                        e.preventDefault();
+                        try {
+                            const input: HTMLInputElement | null = (document.getElementById("remove-entry-input") as HTMLInputElement);
+                            input !== null && input.value !== null ? removeEntry(input.value, setEntries) : console.error(new Error(`Element with id "remove-entry-input" is null`));
+                        } catch (error) {
+                            console.error(error);
+                        }
+                    }}} value="Remove"></input>
+                </form>
+                {Object.keys(entries).map((entry, i) => 
+                    <Entry
+                        key={i}
+                        entry={entry}
+                        entries={entries}
+                        currentTime={currentTime}
+                    />
+                )}
+            </main>
+        </div>
     )
 }
