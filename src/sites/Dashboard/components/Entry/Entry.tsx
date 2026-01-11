@@ -2,15 +2,17 @@ import { Ellipsis, History, ScrollText } from 'lucide-react';
 import { accentColor } from '../../../../consts';
 
 import './Entry.css'
+import { newAttempt } from '../../../../utils';
 
 type Props = {
     entry : any,
     entries: any;
     currentTime: number;
+    setEntries: Function;
 }
 
-export default function Entry({ entry, entries, currentTime } : Props) {
-    const timestamp : number = entries[entry].timestamp;
+export default function Entry({ entry, entries, currentTime, setEntries } : Props) {
+    const timestamp : number = entries[entry].attempts[0];
 
     const timeDifference = currentTime - timestamp > 0 ? (currentTime - timestamp) / 1000 : 0; // <- difference in seconds
 
@@ -55,6 +57,7 @@ export default function Entry({ entry, entries, currentTime } : Props) {
                     size={32}
                     color={accentColor}
                     strokeWidth={1.75}
+                    onClick={() => newAttempt(entry, setEntries)}
                 />
             </div>
         </div>
