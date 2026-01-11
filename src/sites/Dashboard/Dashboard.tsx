@@ -16,7 +16,6 @@ export default function Dashboard() {
 
     useEffect(() => {
         setInterval(() => {
-            console.log("Update");
             setCurrentTime(Date.now());
         }, 1000);
     }, []);
@@ -62,6 +61,7 @@ export default function Dashboard() {
                         entry={entry}
                         entries={entries}
                         currentTime={currentTime}
+                        setEntries={setEntries}
                     />
                 )}
             </main>
