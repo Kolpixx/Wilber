@@ -12,7 +12,7 @@ type Props = {
 export default function Entry({ entry, entries, currentTime } : Props) {
     const timestamp : number = entries[entry].timestamp;
 
-    const timeDifference = (currentTime - timestamp) / 1000; // <- difference in seconds
+    const timeDifference = currentTime - timestamp > 0 ? (currentTime - timestamp) / 1000 : 0; // <- difference in seconds
 
     const timeDifferences: Map<string, number> = new Map([
         ["seconds", Math.floor((timeDifference) % 60)],
