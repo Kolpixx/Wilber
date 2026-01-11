@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { addEntry, removeEntry } from '../../utils'
+import { addEntry } from '../../utils'
 import { Menu } from 'lucide-react';
 import { accentColor } from '../../consts';
 import Entry from './components/Entry/Entry';

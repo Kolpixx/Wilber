@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { getEntries } from '../../utils';
 
 import './EntryDetail.css'
