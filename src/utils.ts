@@ -1,22 +1,23 @@
 export function addEntry(name: string, setEntries: Function) {
     const entries = getEntries();
+    const id = Object.keys(entries).length;
 
-    if (entries[name]) {
-        throw new Error(`An entry with the name "${name}" already exists`);        
+    if (entries[id]) {
+        throw new Error(`An entry with the id "${name}" already exists`);        
     } else {
-        entries[name] = {attempts: [Date.now()]};
+        entries[id] = {name: name, attempts: [Date.now()]};
         setEntries(entries);
     }
 }
 
-export function removeEntry(name: string, setEntries: Function) {
+export function removeEntry(id: number, setEntries: Function) {
     const entries = getEntries();
 
-    if (entries[name]) {
-        delete entries[name];
+    if (entries[id]) {
+        delete entries[id];
         setEntries(entries);
     } else {
-        throw new Error(`An entry with the name ${name} doesn't exist`);
+        throw new Error(`An entry with the id ${id} does not exist`);
     }
 }
 
@@ -26,13 +27,13 @@ export function getEntries() {
     )
 }
 
-export function newAttempt(name: string, setEntries: Function) {
+export function newAttempt(id: number, setEntries: Function) {
     const entries = getEntries();
 
-    if (entries[name]) {
-        entries[name].attempts.splice(0, 0, Date.now());
+    if (entries[id]) {
+        entries[id].attempts.splice(0, 0, Date.now());
         setEntries(entries);
     } else {
-        throw new Error(`An entry with the name ${name} doesn't exist`);
+        throw new Error(`An entry with the id ${id} does not exist`);
     }
 }

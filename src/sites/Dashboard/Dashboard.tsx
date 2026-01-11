@@ -43,7 +43,7 @@ export default function Dashboard() {
                         }
                     }}} value="Add"></input>
                 </form>
-                <form>
+                {/* <form>
                     <input type="text" id="remove-entry-input"></input>
                     <input type="submit" onClick={(e) => {{
                         e.preventDefault();
@@ -54,11 +54,11 @@ export default function Dashboard() {
                             console.error(error);
                         }
                     }}} value="Remove"></input>
-                </form>
-                {Object.keys(entries).map((entry, i) => 
+                </form> */}
+                {Object.keys(entries).map((_key, i) => 
                     <Entry
                         key={i}
-                        entry={entry}
+                        id={i}
                         entries={entries}
                         currentTime={currentTime}
                         setEntries={setEntries}

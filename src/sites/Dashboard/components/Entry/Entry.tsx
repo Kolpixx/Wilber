@@ -5,14 +5,14 @@ import './Entry.css'
 import { newAttempt } from '../../../../utils';
 
 type Props = {
-    entry : any,
+    id: number;
     entries: any;
     currentTime: number;
     setEntries: Function;
 }
 
-export default function Entry({ entry, entries, currentTime, setEntries } : Props) {
-    const timestamp : number = entries[entry].attempts[0];
+export default function Entry({ id, entries, currentTime, setEntries } : Props) {
+    const timestamp : number = entries[id].attempts[0];
 
     const timeDifference = currentTime - timestamp > 0 ? (currentTime - timestamp) / 1000 : 0; // <- difference in seconds
 
@@ -28,7 +28,7 @@ export default function Entry({ entry, entries, currentTime, setEntries } : Prop
     return (
         <div className="entry">
             <div className="entry-left">
-                <h2>{entry}</h2>
+                <h2>{entries[id].name}</h2>
                 <div className="entry-time-data">
                     <div>
                         <p><span className="number-font">{timeDifferences.get("years")}</span> years</p>
@@ -57,7 +57,7 @@ export default function Entry({ entry, entries, currentTime, setEntries } : Prop
                     size={32}
                     color={accentColor}
                     strokeWidth={1.75}
-                    onClick={() => newAttempt(entry, setEntries)}
+                    onClick={() => newAttempt(id, setEntries)}
                 />
             </div>
         </div>
