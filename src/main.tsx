@@ -4,9 +4,11 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 import './index.css'
 import Dashboard from './sites/Dashboard/Dashboard'
+import EntryDetail from './sites/EntryDetail/EntryDetail'
 
 const router = createBrowserRouter([
-  { path: "/", element: <Dashboard />}
+  { path: "/", element: <Dashboard />},
+  { path: "/entry/:id", element: <EntryDetail />}
 ]);
 
 if (!localStorage.getItem(("entries"))) {
