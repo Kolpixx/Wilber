@@ -23,5 +23,6 @@
 
 .entry-time-data {
     display: flex;
-    gap: 20px
+    gap: 20px;
+    font-family: var(--default-font);
 }
