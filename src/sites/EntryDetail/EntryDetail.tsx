@@ -1,9 +1,9 @@
 import { useParams } from 'react-router-dom'
 import { getEntries, getTimeDifferences } from '../../utils';
-
-import './EntryDetail.css'
 import { useEffect, useState } from 'react';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
+
+import './EntryDetail.css'
 
 export default function EntryDetail() {
     const [currentTime, setCurrentTime] = useState<number>(Date.now());
@@ -24,7 +24,6 @@ export default function EntryDetail() {
     const progressBars: Array<any> = [];
     let timeDifferencesKeys: Array<string> = [...timeDifferences.keys()];
     timeDifferencesKeys= timeDifferencesKeys.reverse();
-
 
     for (let i = 0; i < (timeDifferencesKeys.length < 3 ? timeDifferencesKeys.length : 3); i++) {
         const key: string = timeDifferencesKeys[i];
