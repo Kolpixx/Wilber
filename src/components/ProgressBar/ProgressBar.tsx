@@ -1,18 +1,15 @@
 import './ProgressBar.css'
 
-type Alignments = "left" | "center" | "right";
-
 type Props = {
     progressState: number,
     htmlWidth: string;
     id: string,
     text?: string,
-    align?: Alignments,
     leadingZero?: boolean,
     leadingZeroAmount?: number
 }
 
-export default function ProgressBar({ progressState, htmlWidth, id, text, align, leadingZero, leadingZeroAmount } : Props) {
+export default function ProgressBar({ progressState, htmlWidth, id, text, leadingZero, leadingZeroAmount } : Props) {
     return (
         <div className="progress-bar-wrapper">
             <span className="progress-bar-text progress-bar-text-1 progress-bar-text-back"><span className="number-font">{leadingZero ? String(progressState).padStart(leadingZeroAmount || 2, '0') : progressState}</span> {text}</span>
