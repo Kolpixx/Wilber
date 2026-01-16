@@ -1,0 +1,36 @@
+.progress-bar-text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    font-family: "Inter", system-ui;
+    font-size: 2rem;
+    & > .number-font {
+        font-weight: bold;
+    }
+}
+
+.progress-bar-text-back {
+    color: black;
+}
+
+.progress-bar-text-front {
+    white-space: nowrap;
+    color: white;
+}
+
+.progress-bar-wrapper {
+    width: 350px;
+    height: 55px;
+    overflow: hidden;
+    border-radius: 10px;
+    background: rgb(197, 207, 255);
+    position: relative;
+}
+
+.progress-bar {
+    width: 0;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}

@@ -1,0 +1,40 @@
+#entry-detail {
+    & > h1 {
+        font-family: "Inter", system-ui;
+    }
+}
+
+#entry-tracker {
+    padding-left: 10px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.progress-bar {
+    transition: 0.3s ease width;
+}
+
+#progress-bar-1 {
+    background-color: var(--blue);
+}
+
+#progress-bar-2 {
+    background-color: var(--blue-1);
+}
+
+#progress-bar-3 {
+    background-color: var(--blue-2);
+}
+
+#progress-bar-4 {
+    background-color: var(--blue-3);
+}
+
+#progress-bar-5 {
+    background-color: var(--blue-4);
+}
+
+#progress-bar-6 {
+    background-color: var(--blue-5);
+}

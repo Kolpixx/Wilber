@@ -14,7 +14,16 @@
   --h1-font: "Palanquin Dark";
   --default-font: "Inter";
   --number-font: "JetBrains Mono";
-  }
+
+  --background-blue: #C5CFFF;
+
+  --blue: #2A4DFF;
+  --blue-1: #4160FF;
+  --blue-2: #536FFF;
+  --blue-3: #6D85FF;
+  --blue-4: #869AFF;
+  --blue-5: #869AFF;
+}
 
 body {
   min-height: 100vh;
