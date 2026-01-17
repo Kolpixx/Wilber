@@ -1,7 +1,18 @@
 #entry-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
     & > h1 {
         font-family: "Inter", system-ui;
     }
+}
+
+#progress-bars {
+    display: grid;
+    grid-template: repeat(3, auto) / repeat(2, auto);
+    grid-auto-flow: column;
+    gap: 10px;
 }
 
 #entry-tracker {
@@ -25,4 +36,16 @@
 
 #progress-bar-3 {
     background-color: var(--blue-2);
+}
+
+#progress-bar-4 {
+    background-color: var(--blue-3);
+}
+
+#progress-bar-5 {
+    background-color: var(--blue-4);
+}
+
+#progress-bar-6 {
+    background-color: var(--blue-5);
 }

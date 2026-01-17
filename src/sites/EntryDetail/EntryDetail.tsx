@@ -20,12 +20,13 @@ export default function EntryDetail() {
     const timestamp : number = entries[id].attempts[0];
     const timeDifference = currentTime - timestamp > 0 ? (currentTime - timestamp) / 1000 : 0; // <- difference in seconds
     const timeDifferences: Map<string, number> = getTimeDifferences(timeDifference);
+    const maximumProgressBarAmount: number = window.innerWidth > 600 ? 6 : 3;
 
     const progressBars: Array<any> = [];
     let timeDifferencesKeys: Array<string> = [...timeDifferences.keys()];
     timeDifferencesKeys= timeDifferencesKeys.reverse();
 
-    for (let i = 0; i < (timeDifferencesKeys.length < 3 ? timeDifferencesKeys.length : 3); i++) {
+    for (let i = 0; i < (timeDifferencesKeys.length < maximumProgressBarAmount ? timeDifferencesKeys.length : maximumProgressBarAmount); i++) {
         const key: string = timeDifferencesKeys[i];
         const value: number = timeDifferences.get(timeDifferencesKeys[i]) || 0;
         const divider: number = key === "seconds" ? 60 : key === "minutes" ? 60 : key === "hours" ? 24 : key === "days" ? 30.4583 : key === "months" ? 12 : 0;
@@ -53,7 +54,9 @@ export default function EntryDetail() {
             <h1>{name}</h1>
             <div id="entry-tracker">
                 <h2>Tracker</h2>
-                {progressBars}
+                <div id="progress-bars">
+                    {progressBars}
+                </div>
             </div>
             <div id="entry-log">
                 <h2>Log</h2>
