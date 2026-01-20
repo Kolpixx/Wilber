@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom'
 import { getEntries, getTimeDifferences } from '../../utils';
 import { useEffect, useState } from 'react';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
+import DetailCard from './components/DetailCard/DetailCard';
 
 import './EntryDetail.css'
 
@@ -60,6 +61,17 @@ export default function EntryDetail() {
             </div>
             <div id="entry-log">
                 <h2>Log</h2>
+                <div id="detail-cards">
+                    {entries[id].attempts.map((_attempt : number, index: number) => {
+                        return (
+                            <DetailCard
+                                key={index}
+                                index={index}
+                                id={id}
+                            />
+                        )
+                    })}
+                </div>
             </div>
         </div>
     )

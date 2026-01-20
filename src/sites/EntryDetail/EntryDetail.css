@@ -2,9 +2,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 15px;
     min-height: 100vh;
     & > h1 {
         font-family: "Inter", system-ui;
+    }
+    & h2 {
+        font-size: 2rem;
+    }
+    & > div {
+        display: flex;
+        gap: 5px;
+        flex-direction: column;
     }
 }
 
@@ -13,13 +22,6 @@
     grid-template: repeat(3, auto) / repeat(2, auto);
     grid-auto-flow: column;
     gap: 10px;
-}
-
-#entry-tracker {
-    padding-left: 10px;
-    display: flex;
-    gap: 5px;
-    flex-direction: column;
 }
 
 .progress-bar {
@@ -48,4 +50,17 @@
 
 #progress-bar-6 {
     background-color: var(--blue-5);
+}
+
+#detail-cards {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+}
+
+@media (max-width: 750px) {
+    #detail-cards {
+        display: flex;
+        flex-direction: column;
+    }
 }
