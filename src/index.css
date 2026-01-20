@@ -50,3 +50,7 @@ h3 {
 .number-font {
   font-family: var(--number-font);
 }
+
+.pointer {
+  cursor: pointer;
+}

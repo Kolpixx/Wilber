@@ -41,18 +41,21 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
                     size={32}
                     color={accentColor}
                     strokeWidth={1.75}
+                    className="pointer"
                 />
                 <ChartArea
                     size={32}
                     color={accentColor}
                     strokeWidth={1.75}
                     onClick={() => navigate(`/entry/${id}`)}
+                    className="pointer"
                 />
                 <History
                     size={32}
                     color={accentColor}
                     strokeWidth={1.75}
                     onClick={(e) => {e.stopPropagation(); newAttempt(id, setEntries)}}
+                    className="pointer"
                 />
             </div>
         </div>
