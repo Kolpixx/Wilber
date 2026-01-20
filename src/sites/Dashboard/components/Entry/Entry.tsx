@@ -1,4 +1,4 @@
-import { Ellipsis, History, ScrollText } from 'lucide-react';
+import { ChartArea, Ellipsis, History } from 'lucide-react';
 import { accentColor } from '../../../../consts';
 import { getTimeDifferences, newAttempt } from '../../../../utils';
 import { useNavigate } from 'react-router-dom';
@@ -20,7 +20,7 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
     const timeDifferences: Map<string, number> = getTimeDifferences(timeDifference);
 
     return (
-        <div className="entry" onClick={() => navigate(`/entry/${id}`)}>
+        <div className="entry">
             <div className="entry-left">
                 <h2>{entries[id].name}</h2>
                 <div className="entry-time-data">
@@ -42,10 +42,11 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
                     color={accentColor}
                     strokeWidth={1.75}
                 />
-                <ScrollText
+                <ChartArea
                     size={32}
                     color={accentColor}
                     strokeWidth={1.75}
+                    onClick={() => navigate(`/entry/${id}`)}
                 />
                 <History
                     size={32}
