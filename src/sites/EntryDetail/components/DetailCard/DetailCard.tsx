@@ -12,9 +12,8 @@ type Props = {
 export default function DetailCard({ index, id } : Props) {
     const attemptStart = new Date(getEntries()[id].attempts[index]);
     const nextAttemptStart = new Date(getEntries()[id].attempts[index + 1] || 0);
-    console.log(getEntries()[id].attempts[index] - getEntries()[id].attempts[index + 1] || 0);
-    const timeDifferences: Map<string, number> = getTimeDifferences(getEntries()[id].attempts[index] / 1000 - getEntries()[id].attempts[index + 1] / 1000 || 0);
-
+    const currentTime = new Date();
+    const timeDifferences: Map<string, number> = nextAttemptStart.toString() !== new Date(0).toString() ? getTimeDifferences(getEntries()[id].attempts[index] / 1000 - getEntries()[id].attempts[index + 1] / 1000 || 0) : getTimeDifferences(currentTime.getTime() / 1000 - getEntries()[id].attempts[0] / 1000);
     let timeDifferencesKeys: Array<string> = [...timeDifferences.keys()];
     timeDifferencesKeys = timeDifferencesKeys.reverse();
 
@@ -44,11 +43,10 @@ export default function DetailCard({ index, id } : Props) {
                         color={accentColor}
                         strokeWidth={2}
                     />
-                    {timeDifferencesKeys.map((key: string) => {
+                    {timeDifferencesKeys.map((key: string, iterator: number) => {
                         const keys: Map<string, string> = new Map([["seconds", "s"], ["minutes", "m"], ["hours", "h"], ["days", "D"] , ["months", "M"], ["years", "Y"]]);
-
                         return (
-                            <span><span>{timeDifferences.get(key)}</span><span className="">{keys.get(key)}</span></span>
+                            <span key={iterator}><span>{timeDifferences.get(key)}</span><span className="">{keys.get(key)}</span></span>
                         )
                     })}
                 </div>
