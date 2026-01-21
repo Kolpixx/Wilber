@@ -1,13 +1,16 @@
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { getEntries, getTimeDifferences } from '../../utils';
 import { useEffect, useState } from 'react';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import DetailCard from './components/DetailCard/DetailCard';
 
 import './EntryDetail.css'
+import { ArrowLeft } from 'lucide-react';
+import { accentColor } from '../../consts';
 
 export default function EntryDetail() {
     const [currentTime, setCurrentTime] = useState<number>(Date.now());
+    const navigate = useNavigate();
 
     const { id }: any = useParams();
     const entries: any = getEntries();
@@ -52,25 +55,38 @@ export default function EntryDetail() {
 
     return (
         <div id="entry-detail">
-            <h1>{name}</h1>
-            <div id="entry-tracker">
-                <h2>Tracker</h2>
-                <div id="progress-bars">
-                    {progressBars}
-                </div>
+            <div id="entry-head">
+                <ArrowLeft
+                    size={36}
+                    color={accentColor}
+                    strokeWidth={2}
+                    className="pointer"
+                    id="entry-back-button"
+                    onClick={() => navigate("/")}
+                />
+                <h1>{name}</h1>
+                <div style={{width: "36px"}} />
             </div>
-            <div id="entry-log">
-                <h2>Log</h2>
-                <div id="detail-cards">
-                    {entries[id].attempts.map((_attempt : number, index: number) => {
-                        return (
-                            <DetailCard
-                                key={index}
-                                index={index}
-                                id={id}
-                            />
-                        )
-                    })}
+            <div id="entry-main">
+                <div id="entry-tracker">
+                    <h2>Tracker</h2>
+                    <div id="progress-bars">
+                        {progressBars}
+                    </div>
+                </div>
+                <div id="entry-log">
+                    <h2>Log</h2>
+                    <div id="detail-cards">
+                        {entries[id].attempts.map((_attempt : number, index: number) => {
+                            return (
+                                <DetailCard
+                                    key={index}
+                                    index={index}
+                                    id={id}
+                                />
+                            )
+                        })}
+                    </div>
                 </div>
             </div>
         </div>
