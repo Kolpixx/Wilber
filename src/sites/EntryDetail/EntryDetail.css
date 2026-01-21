@@ -8,8 +8,9 @@
     & h1 {
         font-family: "Inter", system-ui;
         text-overflow: ellipsis;
-        white-space: none;
+        line-height: 120%;
         overflow: hidden;
+        white-space: pre-wrap;
     }
     & h2 {
         font-size: 2rem;
