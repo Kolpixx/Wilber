@@ -21,7 +21,7 @@
 
 @media (min-width: 600px) {
     #dashboard > main {
-        gap: 50px;
+        gap: 25px;
         justify-content: unset;
     }
 }
