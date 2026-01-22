@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { addEntry } from '../../utils'
 import { Menu } from 'lucide-react';
 import { accentColor } from '../../consts';
 import Entry from './components/Entry/Entry';
+import AddEntryButton from './components/AddEntryButton/AddEntryButton';
 
 import './Dashboard.css'
 
@@ -31,18 +31,7 @@ export default function Dashboard() {
                 />
             </header>
             <main>
-                <form>
-                    <input type="text" id="add-entry-input"></input>
-                    <input type="submit" onClick={(e) => {{
-                        e.preventDefault();
-                        try {
-                            const input: HTMLInputElement | null = (document.getElementById("add-entry-input") as HTMLInputElement);
-                            input !== null && input.value !== null ? addEntry(input.value, setEntries) : console.error(new Error(`Element with id "add-entry-input" is null`));
-                        } catch (error) {
-                            console.error(error);
-                        }
-                    }}} value="Add"></input>
-                </form>
+                <AddEntryButton size={Object.keys(entries).length === 0 ? "big" : "small"} />
                 {Object.keys(entries).map((_key, i) => 
                     <Entry
                         key={i}
