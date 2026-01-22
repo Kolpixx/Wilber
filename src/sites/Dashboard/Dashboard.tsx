@@ -43,18 +43,6 @@ export default function Dashboard() {
                         }
                     }}} value="Add"></input>
                 </form>
-                {/* <form>
-                    <input type="text" id="remove-entry-input"></input>
-                    <input type="submit" onClick={(e) => {{
-                        e.preventDefault();
-                        try {
-                            const input: HTMLInputElement | null = (document.getElementById("remove-entry-input") as HTMLInputElement);
-                            input !== null && input.value !== null ? removeEntry(input.value, setEntries) : console.error(new Error(`Element with id "remove-entry-input" is null`));
-                        } catch (error) {
-                            console.error(error);
-                        }
-                    }}} value="Remove"></input>
-                </form> */}
                 {Object.keys(entries).map((_key, i) => 
                     <Entry
                         key={i}
