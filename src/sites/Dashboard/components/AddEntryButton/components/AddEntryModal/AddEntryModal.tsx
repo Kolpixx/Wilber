@@ -57,7 +57,7 @@ export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) 
                                     borderWidth={2}
                                     borderRadius={5}
                                 />
-                                <span>Now</span>
+                                <span>Use Current Time</span>
                             </div>
                             <input
                                 id="add-entry-time-start-input"
