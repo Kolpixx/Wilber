@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { addEntry } from '../../../../../../utils';
+import Checkbox from '../../../../../../components/Checkbox/Checkbox';
 
 import './AddEntryModal.css'
-import Checkbox from '../../../../../../components/Checkbox/Checkbox';
 
 type Props = {
     showAddEntryModal: any;
@@ -68,7 +68,7 @@ export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) 
                         </div>
                     </div>
                     <button id="add-entry-submit" className="pointer" onClick={() => {submitEntry()}}>Add Entry</button>
-                    {error}
+                    <span className="error">{error}</span>
                 </div>
             </div>
         </div>

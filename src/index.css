@@ -25,6 +25,7 @@
   --blue-5: #9AABFF;
 
   --green: #36E339;
+  --red: #FF2929;
 }
 
 body {
@@ -97,4 +98,9 @@ h3 {
 
 .checkbox[data-checked="true"] {
   background-color: var(--green);
+}
+
+.error {
+  font-family: var(--default-font);
+  color: var(--red);
 }
