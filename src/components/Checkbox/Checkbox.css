@@ -1,0 +1,6 @@
+.checkbox {
+    border: 1px solid var(--accent);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
