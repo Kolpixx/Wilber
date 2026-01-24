@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { addEntry } from '../../../../../../utils';
+import { X } from 'lucide-react';
+import { accentColor } from '../../../../../../consts';
 import Checkbox from '../../../../../../components/Checkbox/Checkbox';
 
 import './AddEntryModal.css'
@@ -34,7 +36,15 @@ export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) 
     return (
         <div className="modal-wrapper" onClick={(e) => {(e.target as HTMLElement).classList[0] === "modal-wrapper" && showAddEntryModal(false)}}>
             <div className="modal" id="add-entry-modal">
-                <h2>Add Entry</h2>
+                <div id="add-entry-modal-head">
+                    <h2>Add Entry</h2>
+                    <X
+                        size={44}
+                        color={accentColor}
+                        className="pointer"
+                        onClick={() => {showAddEntryModal(false)}}
+                    />
+                </div>
                 <div id="add-entry-modal-options">
                     <div id="add-entry-name">
                         <h3>Name</h3>

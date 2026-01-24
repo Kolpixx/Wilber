@@ -6,6 +6,12 @@
     gap: 5px;
 }
 
+#add-entry-modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #add-entry-modal-options {
     display: flex;
     flex-direction: column;
