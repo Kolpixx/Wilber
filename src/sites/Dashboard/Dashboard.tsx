@@ -3,12 +3,14 @@ import { Menu } from 'lucide-react';
 import { accentColor } from '../../consts';
 import Entry from './components/Entry/Entry';
 import AddEntryButton from './components/AddEntryButton/AddEntryButton';
+import AddEntryModal from './components/AddEntryButton/components/AddEntryModal/AddEntryModal';
 
 import './Dashboard.css'
 
 export default function Dashboard() {
     const [entries, setEntries] = useState<Object>(JSON.parse(localStorage.getItem("entries") || "{}"));
     const [currentTime, setCurrentTime] = useState<number>(Date.now());
+    const [showingAddEntryModal, showAddEntryModal] = useState<boolean>(false);
 
     useEffect(() => {
         localStorage.setItem("entries", JSON.stringify(entries));
@@ -22,6 +24,7 @@ export default function Dashboard() {
 
     return (
         <div id="dashboard">
+            {showingAddEntryModal && <AddEntryModal showAddEntryModal={showAddEntryModal} setEntries={setEntries} />}
             <header>
                 <h1>Wilber</h1>
                 <Menu
@@ -31,7 +34,7 @@ export default function Dashboard() {
                 />
             </header>
             <main>
-                <AddEntryButton size={Object.keys(entries).length === 0 ? "big" : "small"} />
+                <AddEntryButton size={Object.keys(entries).length === 0 ? "big" : "small"} onClick={() => showAddEntryModal(true)} />
                 {Object.keys(entries).map((_key, i) => 
                     <Entry
                         key={i}
