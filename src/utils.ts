@@ -1,11 +1,11 @@
-export function addEntry(name: string, setEntries: Function) {
+export function addEntry(setEntries: Function, name: string, startDate?: Date) {
     const entries = getEntries();
     const id = Object.keys(entries).length;
 
     if (entries[id]) {
         throw new Error(`An entry with the id "${name}" already exists`);        
     } else {
-        entries[id] = {name: name, attempts: [Date.now()]};
+        entries[id] = {name: name, attempts: [startDate?.getTime() || Date.now()]};
         setEntries(entries);
     }
 }
