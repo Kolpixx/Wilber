@@ -63,7 +63,7 @@ export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) 
                                 id="add-entry-time-start-input"
                                 type="datetime-local"
                                 disabled={useCurrentTime}
-                                onChange={(e) => {setStartDate((e.target as HTMLInputElement).valueAsDate || new Date(0))}}
+                                onChange={(e) => {setStartDate(new Date((e.target as HTMLInputElement).value) || new Date(0))}}
                             />
                         </div>
                     </div>
