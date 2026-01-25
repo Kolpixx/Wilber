@@ -18,27 +18,6 @@
     gap: 10px;
 }
 
-#add-entry-modal h2 {
-    font-size: 2.5rem;
-}
-
-#add-entry-modal h3 {
-    font-size: 1.6rem;
-    text-decoration: none;
-}
-
-#add-entry-modal input {
-    border: 2px solid var(--accent);
-    height: 44px;
-    padding: 5px;
-    font-size: 1.1rem;
-    border-radius: 5px;
-
-    &:focus {
-        outline: none;
-    }
-}
-
 #add-entry-begin-now-button-wrapper {
     display: flex;
     gap: 5px;

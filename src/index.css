@@ -104,3 +104,24 @@ h3 {
   font-family: var(--default-font);
   color: var(--red);
 }
+
+.modal h2 {
+    font-size: 2.5rem;
+}
+
+.modal h3 {
+    font-size: 1.6rem;
+    text-decoration: none;
+}
+
+.modal input {
+    border: 2px solid var(--accent);
+    height: 44px;
+    padding: 5px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+
+    &:focus {
+        outline: none;
+    }
+}
