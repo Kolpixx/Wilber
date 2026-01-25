@@ -57,7 +57,7 @@ export default function EntryDetail() {
         <div id="entry-detail">
             <div id="entry-head">
                 <ArrowLeft
-                    size={36}
+                    size={44}
                     color={accentColor}
                     strokeWidth={2}
                     className="pointer"
