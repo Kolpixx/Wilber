@@ -21,6 +21,17 @@ export function removeEntry(id: number, setEntries: Function) {
     }
 }
 
+export function editEntryName(id: number, newName: string, setEntries: Function) {
+    const entries = getEntries();
+
+    if (entries[id]) {
+        entries[id].name = newName;
+        setEntries(entries);
+    } else {
+        throw new Error(`An entry with the id ${id} does not exist`);
+    }
+}
+
 export function getEntries() {
     return (
         JSON.parse(localStorage.getItem("entries") || "{}")
