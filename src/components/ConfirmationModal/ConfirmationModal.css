@@ -1,4 +1,4 @@
-#confirmation-modal {
+.confirmation-modal {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -25,14 +25,14 @@
     }
 }
 
-#confirmation-buttons {
+.confirmation-buttons {
     display: flex;
     justify-content: right;
     width: 100%;
     gap: 5px;
 }
 
-#confirmation-buttons-confirm {
+.confirmation-buttons-confirm {
     background: color-mix(in srgb, var(--green) 100%, white 30%);
 
     &:hover {
@@ -40,7 +40,7 @@
     }
 }
 
-#confirmation-buttons-abort {
+.confirmation-buttons-abort {
     background: color-mix(in srgb, var(--red) 100%, white 30%);
 
     &:hover {
