@@ -1,4 +1,4 @@
-import { ChartArea, Ellipsis, History } from 'lucide-react';
+import { ChartArea, History, SquarePen } from 'lucide-react';
 import { accentColor } from '../../../../consts';
 import { getTimeDifferences, newAttempt } from '../../../../utils';
 import { useNavigate } from 'react-router-dom';
@@ -42,12 +42,6 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
                 </div>
             </div>
             <div className="entry-right">
-                <Ellipsis
-                    size={32}
-                    color={accentColor}
-                    strokeWidth={1.75}
-                    className="pointer"
-                />
                 <ChartArea
                     size={32}
                     color={accentColor}
@@ -60,6 +54,12 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
                     color={accentColor}
                     strokeWidth={1.75}
                     onClick={(e) => {e.stopPropagation(); showNewAttemptConfirmationModal(true)}}
+                    className="pointer"
+                />
+                <SquarePen
+                    size={32}
+                    color={accentColor}
+                    strokeWidth={1.75}
                     className="pointer"
                 />
             </div>
