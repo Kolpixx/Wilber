@@ -10,7 +10,7 @@
         text-overflow: ellipsis;
         line-height: 120%;
         overflow: hidden;
-        white-space: pre-wrap;
+        white-space: nowrap;
     }
     & h2 {
         font-size: 2rem;
