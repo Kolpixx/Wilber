@@ -8,7 +8,7 @@ type Props = {
 
 export default function ConfirmationModal({ showModal, text, confirmFunction } : Props) {
     return (
-        <div className="modal-wrapper" onClick={(e) => {(e.target as HTMLElement).classList[0] === "modal-wrapper" && showModal(false)}}>
+        <div className="modal-wrapper" onClick={(e) => {e.stopPropagation(); (e.target as HTMLElement).classList[0] === "modal-wrapper" && showModal(false)}}>
             <div className="modal confirmation-modal">
                 <span>{text}</span>
                 <div className="confirmation-buttons">

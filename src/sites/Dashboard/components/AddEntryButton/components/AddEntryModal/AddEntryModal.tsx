@@ -34,7 +34,7 @@ export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) 
     }, [useCurrentTime]);
 
     return (
-        <div className="modal-wrapper" onClick={(e) => {(e.target as HTMLElement).classList[0] === "modal-wrapper" && showAddEntryModal(false)}}>
+        <div className="modal-wrapper" onClick={(e) => {e.stopPropagation(); (e.target as HTMLElement).classList[0] === "modal-wrapper" && showAddEntryModal(false)}}>
             <div className="modal" id="add-entry-modal">
                 <div id="add-entry-modal-head">
                     <h2>Add Entry</h2>
