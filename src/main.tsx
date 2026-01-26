@@ -12,7 +12,7 @@ const router = createBrowserRouter([
 ]);
 
 if (!localStorage.getItem(("entries"))) {
-  localStorage.setItem("entries", "{}");
+  localStorage.setItem("entries", "[]");
 }
 
 createRoot(document.getElementById('root')!).render(

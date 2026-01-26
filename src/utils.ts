@@ -1,6 +1,6 @@
 export function addEntry(setEntries: Function, name: string, startDate?: Date) {
     const entries = getEntries();
-    const id = Object.keys(entries).length;
+    const id = entries.length;
 
     if (entries[id]) {
         throw new Error(`An entry with the id "${name}" already exists`);        
@@ -12,9 +12,10 @@ export function addEntry(setEntries: Function, name: string, startDate?: Date) {
 
 export function removeEntry(id: number, setEntries: Function) {
     const entries = getEntries();
+    console.log(entries);
 
     if (entries[id]) {
-        delete entries[id];
+        entries.splice(id, 1);
         setEntries(entries);
     } else {
         throw new Error(`An entry with the id ${id} does not exist`);
@@ -34,7 +35,7 @@ export function editEntryName(id: number, newName: string, setEntries: Function)
 
 export function getEntries() {
     return (
-        JSON.parse(localStorage.getItem("entries") || "{}")
+        JSON.parse(localStorage.getItem("entries") || "[]")
     )
 }
 
