@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Menu } from 'lucide-react';
 import { accentColor } from '../../consts';
-import { removeEntry } from '../../utils';
 import Entry from './components/Entry/Entry';
 import AddEntryButton from './components/AddEntryButton/AddEntryButton';
 import AddEntryModal from './components/AddEntryButton/components/AddEntryModal/AddEntryModal';
