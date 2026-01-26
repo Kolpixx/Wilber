@@ -4,6 +4,7 @@ import { Trash2, X } from "lucide-react";
 import { accentColor } from "../../../../consts";
 
 import './EditEntryModal.css'
+import ConfirmationModal from "../../../../components/ConfirmationModal/ConfirmationModal";
 
 type Props = {
     showModal: Function,
@@ -14,17 +15,19 @@ type Props = {
 export default function EditEntryModal({ showModal, id, setEntries } : Props) {
     const initialName = getEntries()[id].name;
     const [name, setName] = useState<string>(getEntries()[id].name);
+    const [showingRemoveConfirmationModal, showRemoveConfirmationModal] = useState<boolean>(false);
 
     return (
         <div className="modal-wrapper" onClick={(e) => {(e.target as HTMLElement).classList[0] === "modal-wrapper" && showModal(false)}}>
             <div className="modal" id="edit-entry-modal">
+                {showingRemoveConfirmationModal && <ConfirmationModal confirmFunction={() => removeEntry(id, setEntries)} showModal={showRemoveConfirmationModal} text={`Are you sure you want to remove the entry "${initialName}"permanently?`} />}
                 <div id="edit-entry-modal-head">
                     <h2>Edit Entry</h2>
                     <X
                         size={44}
                         color={accentColor}
                         className="pointer"
-                        onClick={() => {showModal(false)}}
+                        onClick={() => showModal(false)}
                     />
                 </div>
                 <div id="edit-entry-modal-options">
@@ -40,7 +43,7 @@ export default function EditEntryModal({ showModal, id, setEntries } : Props) {
                         strokeWidth={1.75}
                         className="pointer"
                         id="edit-entry-modal-delete"
-                        onClick={() => removeEntry(id, setEntries)}
+                        onClick={() => showRemoveConfirmationModal(true)}
                     />
                     <button className="pointer" onClick={() => {editEntryName(id, name, setEntries); showModal(false)}}>Update</button>
                 </div>

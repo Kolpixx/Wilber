@@ -20,7 +20,7 @@
 }
 
 @media (min-width: 600px) {
-    #confirmation-modal {
+    .confirmation-modal {
         max-width: 400px;
     }
 }
