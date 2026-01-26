@@ -56,14 +56,13 @@ export default function EntryDetail() {
     return (
         <div id="entry-detail">
             <div id="entry-head">
-                <button className="icon-button">
+                <button className="icon-button" onClick={() => navigate("/")}>
                     <ArrowLeft
                         size={44}
                         color={accentColor}
                         strokeWidth={2}
                         className="pointer"
                         id="entry-back-button"
-                        onClick={() => navigate("/")}
                     />
                 </button>
                 <h1 title={name}>{name}</h1>

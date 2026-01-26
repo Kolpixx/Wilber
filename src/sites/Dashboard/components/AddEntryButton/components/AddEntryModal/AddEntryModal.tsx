@@ -38,12 +38,13 @@ export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) 
             <div className="modal" id="add-entry-modal">
                 <div id="add-entry-modal-head">
                     <h2>Add Entry</h2>
-                    <X
-                        size={44}
-                        color={accentColor}
-                        className="pointer"
-                        onClick={() => {showAddEntryModal(false)}}
-                    />
+                    <button className="icon-button" onClick={() => showAddEntryModal(false)}>
+                        <X
+                            size={44}
+                            color={accentColor}
+                            className="pointer"
+                        />
+                    </button>
                 </div>
                 <div id="add-entry-modal-options">
                     <div id="add-entry-name">

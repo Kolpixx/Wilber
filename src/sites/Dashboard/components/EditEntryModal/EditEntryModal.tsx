@@ -23,11 +23,10 @@ export default function EditEntryModal({ showModal, id, setEntries } : Props) {
                 {showingRemoveConfirmationModal && <ConfirmationModal confirmFunction={() => removeEntry(id, setEntries)} showModal={showRemoveConfirmationModal} text={`Are you sure you want to remove the entry "${initialName}"permanently?`} />}
                 <div id="edit-entry-modal-head">
                     <h2>Edit Entry</h2>
-                    <button className="icon-button">
+                    <button className="icon-button" onClick={() => showModal(false)}>
                         <X
                             size={44}
                             color={accentColor}
-                            onClick={() => showModal(false)}
                         />
                     </button>
                 </div>
@@ -38,13 +37,12 @@ export default function EditEntryModal({ showModal, id, setEntries } : Props) {
                     </div>
                 </div>
                 <div id="edit-entry-modal-buttons">
-                    <button className="icon-button">
+                    <button className="icon-button" onClick={() => showRemoveConfirmationModal(true)}>
                         <Trash2
                             size={32}
                             color={accentColor}
                             strokeWidth={1.75}
                             id="edit-entry-modal-delete"
-                            onClick={() => showRemoveConfirmationModal(true)}
                         />
                     </button>
                     <button className="pointer" id="edit-entry-modal-button-update" onClick={() => {editEntryName(id, name, setEntries); showModal(false)}}>Update</button>

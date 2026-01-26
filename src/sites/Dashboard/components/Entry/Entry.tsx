@@ -45,28 +45,25 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
                 </div>
             </div>
             <div className="entry-right">
-                <button className="icon-button">
+                <button className="icon-button" onClick={() => navigate(`/entry/${id}`)}>
                     <ChartArea
                         size={32}
                         color={accentColor}
                         strokeWidth={1.75}
-                        onClick={() => navigate(`/entry/${id}`)}
                     />
                 </button>
-                <button className="icon-button">
+                <button className="icon-button" onClick={() => showNewAttemptConfirmationModal(true)}>
                     <History
                         size={32}
                         color={accentColor}
                         strokeWidth={1.75}
-                        onClick={() => {showNewAttemptConfirmationModal(true)}}
                     />
                 </button>
-                <button className="icon-button">
+                <button className="icon-button" onClick={() => showEditEntryModal(true)}>
                     <SquarePen
                         size={32}
                         color={accentColor}
                         strokeWidth={1.75}
-                        onClick={() => {showEditEntryModal(true)}}
                     />
                 </button>
             </div>
