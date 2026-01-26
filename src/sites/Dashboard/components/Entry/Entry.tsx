@@ -30,7 +30,7 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
             {showingNewAttemptConfirmationModal && <ConfirmationModal confirmFunction={() => newAttempt(id, setEntries)} showModal={showNewAttemptConfirmationModal} text="Are you sure you want to start a new attempt?" />}
             {showingEditEntryModal && <EditEntryModal id={id} setEntries={setEntries} showModal={showEditEntryModal} />}
             <div className="entry-left">
-                <h2>{entries[id].name}</h2>
+                <h2 title={entries[id].name}>{entries[id].name}</h2>
                 <div className="entry-time-data">
                     <div>
                         <p><span className="number-font">{timeDifferences.get("years") || "0"}</span> years</p>

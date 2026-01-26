@@ -64,7 +64,7 @@ export default function EntryDetail() {
                     id="entry-back-button"
                     onClick={() => navigate("/")}
                 />
-                <h1>{name}</h1>
+                <h1 title={name}>{name}</h1>
                 <div style={{width: "36px"}} />
             </div>
             <div id="entry-main">
