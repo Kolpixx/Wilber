@@ -23,12 +23,13 @@ export default function EditEntryModal({ showModal, id, setEntries } : Props) {
                 {showingRemoveConfirmationModal && <ConfirmationModal confirmFunction={() => removeEntry(id, setEntries)} showModal={showRemoveConfirmationModal} text={`Are you sure you want to remove the entry "${initialName}"permanently?`} />}
                 <div id="edit-entry-modal-head">
                     <h2>Edit Entry</h2>
-                    <X
-                        size={44}
-                        color={accentColor}
-                        className="pointer"
-                        onClick={() => showModal(false)}
-                    />
+                    <button className="icon-button">
+                        <X
+                            size={44}
+                            color={accentColor}
+                            onClick={() => showModal(false)}
+                        />
+                    </button>
                 </div>
                 <div id="edit-entry-modal-options">
                     <div id="edit-entry-modal-name">
@@ -37,15 +38,16 @@ export default function EditEntryModal({ showModal, id, setEntries } : Props) {
                     </div>
                 </div>
                 <div id="edit-entry-modal-buttons">
-                    <Trash2
-                        size={32}
-                        color={accentColor}
-                        strokeWidth={1.75}
-                        className="pointer"
-                        id="edit-entry-modal-delete"
-                        onClick={() => showRemoveConfirmationModal(true)}
-                    />
-                    <button className="pointer" onClick={() => {editEntryName(id, name, setEntries); showModal(false)}}>Update</button>
+                    <button className="icon-button">
+                        <Trash2
+                            size={32}
+                            color={accentColor}
+                            strokeWidth={1.75}
+                            id="edit-entry-modal-delete"
+                            onClick={() => showRemoveConfirmationModal(true)}
+                        />
+                    </button>
+                    <button className="pointer" id="edit-entry-modal-button-update" onClick={() => {editEntryName(id, name, setEntries); showModal(false)}}>Update</button>
                 </div>
             </div>
         </div>

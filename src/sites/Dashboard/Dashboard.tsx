@@ -27,11 +27,13 @@ export default function Dashboard() {
             {showingAddEntryModal && <AddEntryModal showAddEntryModal={showAddEntryModal} setEntries={setEntries} />}
             <header>
                 <h1>Wilber</h1>
-                <Menu
-                    size={36}
-                    color={accentColor}
-                    strokeWidth={2.5}
-                />
+                <button className="icon-button">
+                    <Menu
+                        size={36}
+                        color={accentColor}
+                        strokeWidth={2.5}
+                    />
+                </button>
             </header>
             <main>
                 <AddEntryButton size={entries.length === 0 ? "big" : "small"} onClick={() => showAddEntryModal(true)} />

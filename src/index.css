@@ -58,6 +58,10 @@ h3 {
   cursor: pointer;
 }
 
+button {
+  cursor: pointer;
+}
+
 /* Modals */
 .modal-wrapper {
   position: fixed;
@@ -124,4 +128,9 @@ h3 {
     &:focus {
         outline: none;
     }
+}
+
+.icon-button {
+  border: none;
+  background: none;
 }
