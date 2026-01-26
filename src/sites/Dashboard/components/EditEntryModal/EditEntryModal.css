@@ -1,0 +1,40 @@
+#edit-entry-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 400px;
+}
+
+#edit-entry-modal-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#edit-entry-modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    & button {
+        height: 42px;
+        width: 110px;
+        font-size: 18px;
+        border: 2px solid var(--accent);
+        border-radius: 5px;
+        transition: 0.2s ease background;
+        background: color-mix(in srgb, var(--green) 100%, white 30%);
+
+        &:hover {
+            background: var(--green);
+        }
+    }
+}
+
+#edit-entry-modal-delete {
+    transition: 0.2s ease all;
+
+    &:hover {
+        stroke: var(--red);
+    }
+}

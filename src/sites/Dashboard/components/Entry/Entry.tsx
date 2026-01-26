@@ -4,6 +4,7 @@ import { getTimeDifferences, newAttempt } from '../../../../utils';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import ConfirmationModal from '../../../../components/ConfirmationModal/ConfirmationModal';
+import EditEntryModal from '../EditEntryModal/EditEntryModal';
 
 import './Entry.css'
 
@@ -18,6 +19,7 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
     const navigate = useNavigate();
 
     const [showingNewAttemptConfirmationModal, showNewAttemptConfirmationModal] = useState<boolean>(false);
+    const [showingEditEntryModal, showEditEntryModal] = useState<boolean>(false);
 
     const timestamp : number = entries[id].attempts[0];
     const timeDifference = currentTime - timestamp > 0 ? (currentTime - timestamp) / 1000 : 0; // <- difference in seconds
@@ -26,6 +28,7 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
     return (
         <div className="entry">
             {showingNewAttemptConfirmationModal && <ConfirmationModal confirmFunction={() => newAttempt(id, setEntries)} showModal={showNewAttemptConfirmationModal} text="Are you sure you want to start a new attempt?" />}
+            {showingEditEntryModal && <EditEntryModal id={id} setEntries={setEntries} showModal={showEditEntryModal} />}
             <div className="entry-left">
                 <h2>{entries[id].name}</h2>
                 <div className="entry-time-data">
@@ -53,13 +56,14 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
                     size={32}
                     color={accentColor}
                     strokeWidth={1.75}
-                    onClick={(e) => {e.stopPropagation(); showNewAttemptConfirmationModal(true)}}
+                    onClick={() => {showNewAttemptConfirmationModal(true)}}
                     className="pointer"
                 />
                 <SquarePen
                     size={32}
                     color={accentColor}
                     strokeWidth={1.75}
+                    onClick={() => {showEditEntryModal(true)}}
                     className="pointer"
                 />
             </div>
