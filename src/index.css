@@ -133,4 +133,7 @@ button {
 .icon-button {
   border: none;
   background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
