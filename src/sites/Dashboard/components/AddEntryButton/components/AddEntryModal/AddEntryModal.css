@@ -4,6 +4,7 @@
     justify-content: center;
     min-width: 400px;
     gap: 5px;
+    color: var(--text);
 }
 
 #add-entry-modal-options {
@@ -30,14 +31,14 @@
 #add-entry-submit {
     height: 44px;
     border-radius: 5px;
-    border: 2px solid var(--accent);
-    background: white;
+    border: 2px solid var(--border);
+    background: var(--background-1);
     font-size: 1.3rem;
     font-weight: 500;
     transition: 0.2s ease background;
 
     &:hover {
-        background: rgba(0, 0, 0, .2);
+        background: var(--background-hover);
     }
 }
 

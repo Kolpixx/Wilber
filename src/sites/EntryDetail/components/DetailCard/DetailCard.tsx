@@ -1,5 +1,4 @@
 import { Hourglass, Play, TimerReset } from 'lucide-react';
-import { accentColor } from '../../../../consts';
 import { getEntries, getTimeDifferences } from '../../../../utils';
 
 import './DetailCard.css'
@@ -24,7 +23,6 @@ export default function DetailCard({ index, id } : Props) {
                 <div className="detail-card-start">
                     <Play
                         size={28}
-                        color={accentColor}
                         strokeWidth={2}
                     />
                     {attemptStart.toLocaleDateString([], {year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit"})}
@@ -32,7 +30,6 @@ export default function DetailCard({ index, id } : Props) {
                 <div className="detail-card-reset">
                     <TimerReset
                         size={28}
-                        color={accentColor}
                         strokeWidth={2}
                     />
                     {nextAttemptStart.toString() !== new Date(0).toString() ? nextAttemptStart.toLocaleDateString([], {year: "numeric", month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", second: "2-digit"}) : "Still going!"}
@@ -40,7 +37,6 @@ export default function DetailCard({ index, id } : Props) {
                 <div className="detail-card-time">
                     <Hourglass
                         size={28}
-                        color={accentColor}
                         strokeWidth={2}
                     />
                     {timeDifferencesKeys.map((key: string, iterator: number) => {

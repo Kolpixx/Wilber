@@ -4,7 +4,7 @@
     right: 25px;
     width: 64px;
     height: 64px;
-    background: white;
+    background: var(--background-1);
     border: none;
     border-radius: 12px;
     box-shadow: 4px 2px 6px 1px rgba(0,0,0,0.2);
@@ -15,7 +15,7 @@
 #add-entry-button-big {
     width: 343px;
     height: 142px;
-    background: white;
-    border: 4px dashed var(--accent);
+    background: var(--background-1);
+    border: 4px dashed var(--border);
     border-radius: 10px;
 }

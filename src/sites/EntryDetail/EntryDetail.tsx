@@ -1,12 +1,11 @@
 import { useNavigate, useParams } from 'react-router-dom'
 import { getEntries, getTimeDifferences } from '../../utils';
 import { useEffect, useState } from 'react';
+import { ArrowLeft } from 'lucide-react';
 import ProgressBar from '../../components/ProgressBar/ProgressBar';
 import DetailCard from './components/DetailCard/DetailCard';
 
 import './EntryDetail.css'
-import { ArrowLeft } from 'lucide-react';
-import { accentColor } from '../../consts';
 
 export default function EntryDetail() {
     const [currentTime, setCurrentTime] = useState<number>(Date.now());
@@ -59,7 +58,6 @@ export default function EntryDetail() {
                 <button className="icon-button" onClick={() => navigate("/")}>
                     <ArrowLeft
                         size={44}
-                        color={accentColor}
                         strokeWidth={2}
                         className="pointer"
                         id="entry-back-button"

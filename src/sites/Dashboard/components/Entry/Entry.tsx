@@ -1,5 +1,4 @@
 import { ChartArea, History, SquarePen } from 'lucide-react';
-import { accentColor } from '../../../../consts';
 import { getTimeDifferences, newAttempt } from '../../../../utils';
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -48,21 +47,18 @@ export default function Entry({ id, entries, currentTime, setEntries } : Props) 
                 <button className="icon-button" onClick={() => navigate(`/entry/${id}`)}>
                     <ChartArea
                         size={32}
-                        color={accentColor}
                         strokeWidth={1.75}
                     />
                 </button>
                 <button className="icon-button" onClick={() => showNewAttemptConfirmationModal(true)}>
                     <History
                         size={32}
-                        color={accentColor}
                         strokeWidth={1.75}
                     />
                 </button>
                 <button className="icon-button" onClick={() => showEditEntryModal(true)}>
                     <SquarePen
                         size={32}
-                        color={accentColor}
                         strokeWidth={1.75}
                     />
                 </button>

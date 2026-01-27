@@ -1,5 +1,4 @@
 import { Check } from 'lucide-react'
-import { accentColor } from '../../consts'
 
 import './Checkbox.css'
 
@@ -15,7 +14,7 @@ type Props = {
 export default function Checkbox({ ticked, setTicked, size, strokeWidth, borderWidth, borderRadius } : Props) {
     return (
         <div className="checkbox pointer" data-checked={ticked} onClick={() => {setTicked(!ticked)}} style={{width: `${size || 36}px`, height: `${size || 36}px`, borderWidth: `${borderWidth}px`, borderRadius: `${borderRadius}px`}}>
-            {ticked && <Check size={(size || 0) - 4} color={accentColor} strokeWidth={strokeWidth || 2} />}
+            {ticked && <Check size={(size || 0) - 4} strokeWidth={strokeWidth || 2} />}
         </div>
     )
 }

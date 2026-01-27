@@ -19,6 +19,14 @@
     justify-content: center;
 }
 
+#settings-button > svg {
+    transition: 0.5s ease transform;
+}
+
+#settings-button:hover > svg {
+    transform: rotate(-90deg);
+}
+
 @media (min-width: 600px) {
     #dashboard > main {
         gap: 25px;

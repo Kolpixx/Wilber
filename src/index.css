@@ -8,7 +8,13 @@
     box-sizing: border-box;
 }
 
-:root {
+body[data-theme="light"] {
+  --background: #FFFFFF;
+  --background-1: #FFFFFF;
+  --background-hover: rgba(0, 0, 0, .2);
+
+  --border: #000000;
+
   --accent: #000000;
   --text: #000000;
   --h1-font: "Palanquin Dark";
@@ -28,7 +34,34 @@
   --red: #FF2929;
 }
 
+body[data-theme="dark"] {
+  --background: #1d1d1d;
+  --background-1: #292929;
+  --background-hover: rgba(255, 255, 255, .2);
+
+  --border: #363636;
+
+  --accent: #FFFFFF;
+  --text: #FFFFFF;
+  --h1-font: "Palanquin Dark";
+  --default-font: "Inter";
+  --number-font: "JetBrains Mono";
+
+  --background-blue: #C5CFFF;
+
+  --blue: #2A4DFF;
+  --blue-1: #4160FF;
+  --blue-2: #536FFF;
+  --blue-3: #6D85FF;
+  --blue-4: #869AFF;
+  --blue-5: #9AABFF;
+
+  --green: #1f811f;
+  --red: #811f1f;
+}
+
 body {
+  background: var(--background);
   min-height: 100vh;
 }
 
@@ -48,6 +81,10 @@ h3 {
   font-family: var(--default-font);
   text-decoration: underline;
   font-size: 1.5rem;
+}
+
+h1, h2, h3, p, button {
+  color: var(--text);
 }
 
 .number-font {
@@ -80,7 +117,7 @@ button {
 .modal {
   min-width: 50px;
   min-height: 50px;
-  background: white;
+  background: var(--background);
   padding: 15px;
   box-shadow: 4px 2px 6px 1px rgba(0,0,0,0.2);
   -webkit-box-shadow: 4px 2px 6px 1px rgba(0,0,0,0.2);
@@ -119,11 +156,13 @@ button {
 }
 
 .modal input {
-    border: 2px solid var(--accent);
+    border: 2px solid var(--border);
     height: 44px;
     padding: 5px;
     font-size: 1.1rem;
     border-radius: 5px;
+    background: var(--background-1);
+    color: var(--text);
 
     &:focus {
         outline: none;
@@ -142,4 +181,8 @@ button {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.lucide {
+  color: var(--accent);
 }

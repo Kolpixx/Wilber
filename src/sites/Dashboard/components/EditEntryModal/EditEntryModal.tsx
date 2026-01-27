@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { editEntryName, getEntries, removeEntry } from "../../../../utils";
 import { Trash2, X } from "lucide-react";
-import { accentColor } from "../../../../consts";
 
 import './EditEntryModal.css'
 import ConfirmationModal from "../../../../components/ConfirmationModal/ConfirmationModal";
@@ -26,7 +25,6 @@ export default function EditEntryModal({ showModal, id, setEntries } : Props) {
                     <button className="icon-button" onClick={() => showModal(false)}>
                         <X
                             size={44}
-                            color={accentColor}
                         />
                     </button>
                 </div>
@@ -40,7 +38,6 @@ export default function EditEntryModal({ showModal, id, setEntries } : Props) {
                     <button className="icon-button" onClick={() => showRemoveConfirmationModal(true)}>
                         <Trash2
                             size={32}
-                            color={accentColor}
                             strokeWidth={1.75}
                             id="edit-entry-modal-delete"
                         />

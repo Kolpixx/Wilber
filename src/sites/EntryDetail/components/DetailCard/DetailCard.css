@@ -3,6 +3,7 @@
     padding: 15px;
     display: flex;
     flex-direction: column;
+    background: var(--background-1);
     font-weight: 500;
     gap: 5px;
     border-radius: 10px;
@@ -12,6 +13,7 @@
 }
 
 .detail-card-stats {
+    color: var(--text);
     display: flex;
     flex-direction: column;
     gap: 3px;

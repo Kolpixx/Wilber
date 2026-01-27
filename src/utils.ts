@@ -62,3 +62,26 @@ export function getTimeDifferences(timeDifference: number) {
 
     return timeDifferences;
 }
+
+type Themes = "system" | "light" | "dark";
+
+export function switchTheme(chosenTheme: Themes) {
+    if (chosenTheme === "system") {
+        chosenTheme = getSystemTheme();
+    }
+
+    document.body.setAttribute("data-theme", chosenTheme);
+    
+    const preferences = JSON.parse(localStorage.getItem("preferences") || "{}");
+    preferences.theme = chosenTheme;
+    localStorage.setItem("preferences", JSON.stringify(preferences));
+}
+
+export function getSystemTheme() {
+    const darkModeMq = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+    if (darkModeMq && darkModeMq.matches) {
+        return "dark";
+    } else {
+        return "light";
+    }
+}

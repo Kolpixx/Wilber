@@ -3,6 +3,8 @@
     height: 142px;
     display: flex;
     justify-content: space-between;
+    background: var(--background-1);
+    color: var(--text);
     gap: 5px;
     padding: 15px;
     border-radius: 10px;

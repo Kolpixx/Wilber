@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { addEntry } from '../../../../../../utils';
 import { X } from 'lucide-react';
-import { accentColor } from '../../../../../../consts';
 import Checkbox from '../../../../../../components/Checkbox/Checkbox';
 
 import './AddEntryModal.css'
@@ -41,7 +40,6 @@ export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) 
                     <button className="icon-button" onClick={() => showAddEntryModal(false)}>
                         <X
                             size={44}
-                            color={accentColor}
                             className="pointer"
                         />
                     </button>

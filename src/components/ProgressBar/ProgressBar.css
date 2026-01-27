@@ -4,6 +4,7 @@
     transform: translateY(-50%);
     left: 10px;
     font-family: "Inter", system-ui;
+    color: white;
     font-size: 2rem;
     & > .number-font {
         font-weight: bold;

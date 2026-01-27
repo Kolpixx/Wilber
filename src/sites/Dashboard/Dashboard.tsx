@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Menu } from 'lucide-react';
-import { accentColor } from '../../consts';
+import { Cog } from 'lucide-react';
 import Entry from './components/Entry/Entry';
 import AddEntryButton from './components/AddEntryButton/AddEntryButton';
 import AddEntryModal from './components/AddEntryButton/components/AddEntryModal/AddEntryModal';
+import SettingsModal from './components/SettingsModal/SettingsModal';
 
 import './Dashboard.css'
 
@@ -11,6 +11,7 @@ export default function Dashboard() {
     const [entries, setEntries] = useState<Array<Object>>(JSON.parse(localStorage.getItem("entries") || "[]"));
     const [currentTime, setCurrentTime] = useState<number>(Date.now());
     const [showingAddEntryModal, showAddEntryModal] = useState<boolean>(false);
+    const [showingSettingsModal, showSettingsModal] = useState<boolean>(false);
 
     useEffect(() => {
         localStorage.setItem("entries", JSON.stringify(entries));
@@ -25,13 +26,13 @@ export default function Dashboard() {
     return (
         <div id="dashboard">
             {showingAddEntryModal && <AddEntryModal showAddEntryModal={showAddEntryModal} setEntries={setEntries} />}
+            {showingSettingsModal && <SettingsModal showModal={showSettingsModal} />}
             <header>
                 <h1>Wilber</h1>
-                <button className="icon-button">
-                    <Menu
-                        size={36}
-                        color={accentColor}
-                        strokeWidth={2.5}
+                <button id="settings-button" className="icon-button" onClick={() => showSettingsModal(true)}>
+                    <Cog
+                        size={42}
+                        strokeWidth={2}
                     />
                 </button>
             </header>
