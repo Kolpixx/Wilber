@@ -9,8 +9,8 @@
 }
 
 body[data-theme="light"] {
-  --background: #FFFFFF;
-  --background-1: #FFFFFF;
+  --background: #ffffff;
+  --background-1: #ffffff;
   --background-hover: rgba(0, 0, 0, .2);
 
   --border: #000000;

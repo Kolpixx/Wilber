@@ -1,3 +1,5 @@
+import type { Themes } from "./consts";
+
 export function addEntry(setEntries: Function, name: string, startDate?: Date) {
     const entries = getEntries();
     const id = entries.length;
@@ -63,8 +65,6 @@ export function getTimeDifferences(timeDifference: number) {
     return timeDifferences;
 }
 
-type Themes = "system" | "light" | "dark";
-
 export function switchTheme(chosenTheme: Themes) {
     if (chosenTheme === "system") {
         chosenTheme = getSystemTheme();
@@ -84,4 +84,11 @@ export function getSystemTheme() {
     } else {
         return "light";
     }
+}
+
+export function getCurrentTheme() {
+    const preferences = JSON.parse(localStorage.getItem("preferences") || '{"theme": "light"}');
+    const theme: Themes = preferences.theme;
+
+    return theme;
 }

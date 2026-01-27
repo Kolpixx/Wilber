@@ -1,0 +1,27 @@
+#settings-theme-selector-wrapper {
+    display: flex;
+    height: 44px;
+    border: 2px solid var(--border);
+    background: var(--background-1);
+    border-radius: 16px;
+    overflow: hidden;
+
+    & > button {
+        width: 128px;
+        font-size: 16px;
+        border: none;
+        font-family: "Inter", system-ui;
+        border-radius: 12px;
+    }
+    & > button:not(#selected-theme) {
+        background: var(--background-1);
+
+        &:hover {
+            background: rgba(0, 0, 0, .2);
+        }
+    }
+}
+
+#selected-theme {
+    background: var(--blue-2);
+}

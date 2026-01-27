@@ -1,11 +1,21 @@
 import { X } from "lucide-react";
-import { switchTheme } from "../../../../utils";
+import { getCurrentTheme, switchTheme } from "../../../../utils";
+import { useEffect, useState } from "react";
+import type { Themes } from "../../../../consts";
+
+import './SettingsModal.css'
 
 type Props = {
     showModal: Function
 }
 
 export default function SettingsModal({ showModal } : Props) {
+    const [selectedTheme, selectTheme] = useState<Themes>(getCurrentTheme());
+
+    useEffect(() => {
+        switchTheme(selectedTheme);
+    }, [selectedTheme]);
+
     return (
         <div className="modal-wrapper" onClick={(e) => {e.stopPropagation(); (e.target as HTMLElement).classList[0] === "modal-wrapper" && showModal(false)}}>
             <div id="settings-modal" className="modal">
@@ -20,9 +30,9 @@ export default function SettingsModal({ showModal } : Props) {
                 </div>
                 <div id="settings-modal-options">
                     <div id="settings-theme-selector-wrapper">
-                        <button onClick={() => switchTheme("system")}>System</button>
-                        <button onClick={() => switchTheme("light")}>Light</button>
-                        <button onClick={() => switchTheme("dark")}>Dark</button>
+                        <button id={selectedTheme === "system" ? "selected-theme" : ""} onClick={() => selectTheme("system")}>System</button>
+                        <button id={selectedTheme === "light" ? "selected-theme" : ""} onClick={() => selectTheme("light")}>Light</button>
+                        <button id={selectedTheme === "dark" ? "selected-theme" : ""} onClick={() => selectTheme("dark")}>Dark</button>
                     </div>
                 </div>
             </div>
