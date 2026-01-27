@@ -138,7 +138,7 @@ button {
 }
 
 .checkbox[data-checked="true"] {
-  background-color: var(--green);
+  background-color: var(--blue-2);
 }
 
 .error {

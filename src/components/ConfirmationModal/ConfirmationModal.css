@@ -34,15 +34,15 @@
 }
 
 .confirmation-buttons-confirm {
-    background: color-mix(in srgb, var(--green) 100%, white 30%);
+    background: var(--blue-2);
 
     &:hover {
-        background: var(--green);
+        background: var(--blue-1);
     }
 }
 
 .confirmation-buttons-abort {
-    background: color-mix(in srgb, var(--red) 100%, white 30%);
+    background: color-mix(in srgb, var(--red) 100%, white 20%);
 
     &:hover {
         background: var(--red);
