@@ -6,12 +6,6 @@
     min-width: 400px;
 }
 
-#edit-entry-modal-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
 #edit-entry-modal-buttons {
     display: flex;
     justify-content: space-between;
