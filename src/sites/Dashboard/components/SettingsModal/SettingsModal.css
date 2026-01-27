@@ -1,3 +1,18 @@
+#settings-modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 400px;
+    gap: 5px;
+    color: var(--text);
+}
+
+#settings-modal-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
 #settings-theme-selector-wrapper {
     display: flex;
     height: 44px;
@@ -11,7 +26,6 @@
         font-size: 16px;
         border: none;
         font-family: "Inter", system-ui;
-        border-radius: 12px;
     }
     & > button:not(#selected-theme) {
         background: var(--background-1);
@@ -24,4 +38,5 @@
 
 #selected-theme {
     background: var(--blue-2);
+    font-weight: 600;
 }

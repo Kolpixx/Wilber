@@ -20,7 +20,7 @@ export default function SettingsModal({ showModal } : Props) {
         <div className="modal-wrapper" onClick={(e) => {e.stopPropagation(); (e.target as HTMLElement).classList[0] === "modal-wrapper" && showModal(false)}}>
             <div id="settings-modal" className="modal">
                 <div className="modal-head">
-                    <h2>Add Entry</h2>
+                    <h2>Settings</h2>
                     <button className="icon-button" onClick={() => showModal(false)}>
                         <X
                             size={44}
@@ -29,10 +29,13 @@ export default function SettingsModal({ showModal } : Props) {
                     </button>
                 </div>
                 <div id="settings-modal-options">
-                    <div id="settings-theme-selector-wrapper">
-                        <button id={selectedTheme === "system" ? "selected-theme" : ""} onClick={() => selectTheme("system")}>System</button>
-                        <button id={selectedTheme === "light" ? "selected-theme" : ""} onClick={() => selectTheme("light")}>Light</button>
-                        <button id={selectedTheme === "dark" ? "selected-theme" : ""} onClick={() => selectTheme("dark")}>Dark</button>
+                    <div id="settings-themes">
+                        <h3>Theme</h3>
+                        <div id="settings-theme-selector-wrapper">
+                            <button id={selectedTheme === "system" ? "selected-theme" : ""} onClick={() => selectTheme("system")}>System</button>
+                            <button id={selectedTheme === "light" ? "selected-theme" : ""} onClick={() => selectTheme("light")}>Light</button>
+                            <button id={selectedTheme === "dark" ? "selected-theme" : ""} onClick={() => selectTheme("dark")}>Dark</button>
+                        </div>
                     </div>
                 </div>
             </div>
