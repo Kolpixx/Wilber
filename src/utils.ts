@@ -92,3 +92,13 @@ export function getCurrentTheme() {
 
     return theme;
 }
+
+export function downloadEntries() {
+    const entries: string = JSON.stringify(getEntries(), null, 2);
+    const entriesBlob: Blob = new Blob([entries], { type: "application/json" });
+    const downloadElement: HTMLAnchorElement = document.createElement("a");
+
+    downloadElement.href = window.URL.createObjectURL(entriesBlob);
+    downloadElement.download = "entries.json";
+    downloadElement.click();
+}
