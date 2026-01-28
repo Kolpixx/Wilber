@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# Wilber
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Wilber is a free & open-source Sobriety tracker running fully local inside your browser.
 
-Currently, two official plugins are available:
+## Images
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Banner
 
-## React Compiler
+<img src="./assets/banner.webp" height="800px" alt='Banner for Wilber with headline: "Wilber; Sobriety tracker - private!". On the bottom left of the picture is a QR-Code which leads to the url: "wilberapp.netlify.app". On the right side of the picture, three components of the web app are showcased, all tilted slightly, overlapping each other a bit to create a playful vibe.'>
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Contributing
 
-## Expanding the ESLint configuration
+Contributions are always welcome! To add a new theme you can head to the [consts.ts](./src/consts.ts) file, add the identifier and display name (["IDENTIFIER", "DISPLAY_NAME"]) to the themes Array and set the values of your theme in the [index.css](./src/index.css) file.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+```css
+body[data-theme="IDENTIFIER"] {
+  --background: VALUE;
+  --background-1: VALUE;
+  --background-hover: VALUE;
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+  --border: VALUE;
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+  --accent: VALUE;
+  --text: VALUE;
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+  --blue: VALUE;
+  --blue-1: VALUE;
+  --blue-2: VALUE;
+  --blue-3: VALUE;
+  --blue-4: VALUE;
+  --blue-5: VALUE;
+  --blue-bg: VALUE;
+
+  --green: VALUE;
+  --red: VALUE;
+}
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Feel free to make other changes too (like the alien theme changing the logo).
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## License
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+This project is licensed under [MIT](./LICENSE).
