@@ -22,6 +22,7 @@
 .entry-left {
     display: flex;
     flex-direction: column;
+    gap: 5px;
     overflow: hidden;
     
     & > h2 {
