@@ -61,15 +61,11 @@ export function getTimeDifferences(timeDifference: number) {
 }
 
 export function switchTheme(chosenTheme: Themes) {
-    if (chosenTheme === "system") {
-        chosenTheme = getSystemTheme();
-    }
-
-    document.body.setAttribute("data-theme", chosenTheme);
-    
     const preferences = JSON.parse(localStorage.getItem("preferences") || "{}");
     preferences.theme = chosenTheme;
     localStorage.setItem("preferences", JSON.stringify(preferences));
+
+    document.body.setAttribute("data-theme", chosenTheme === "system" ? getSystemTheme() : chosenTheme);
 }
 
 export function getSystemTheme() {

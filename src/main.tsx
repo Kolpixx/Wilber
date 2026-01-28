@@ -5,6 +5,7 @@ import Dashboard from './sites/Dashboard/Dashboard'
 import EntryDetail from './sites/EntryDetail/EntryDetail'
 
 import './index.css'
+import { getSystemTheme } from './utils'
 
 const router = createBrowserRouter([
   { path: "/", element: <Dashboard />},
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
 ]);
 
 const defaultPreferences = {
-  theme: "light"
+  theme: "system"
 }
 
 if (!localStorage.getItem("entries")) {
@@ -24,7 +25,8 @@ if (!localStorage.getItem("preferences")) {
 }
 
 const preferences = JSON.parse(localStorage.getItem("preferences") || JSON.stringify(defaultPreferences));
-document.body.setAttribute("data-theme", preferences.theme || "light");
+const preferredTheme = preferences.theme === "system" ? getSystemTheme() : preferences.theme || "light";
+document.body.setAttribute("data-theme", preferredTheme);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
