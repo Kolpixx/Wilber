@@ -24,8 +24,6 @@ body[data-theme="light"] {
   --accent: #000000;
   --text: #000000;
 
-  --background-blue: #C5CFFF;
-
   --blue: #2A4DFF;
   --blue-1: #4160FF;
   --blue-2: #536FFF;
@@ -47,8 +45,6 @@ body[data-theme="dark"] {
   --accent: #FFFFFF;
   --text: #FFFFFF;
 
-  --background-blue: #C5CFFF;
-
   --blue: #2A4DFF;
   --blue-1: #4160FF;
   --blue-2: #536FFF;
@@ -58,6 +54,27 @@ body[data-theme="dark"] {
 
   --green: #1f811f;
   --red: #811f1f;
+}
+
+body[data-theme="catppuccin-mocha"] {
+  --background: #1e1e2e;
+  --background-1: #313244;
+  --background-hover: rgba(255, 255, 255, .2);
+
+  --border: #45475a;
+
+  --accent: var(--blue);
+  --text: #cdd6f4;
+
+  --blue: #89b4fa;
+  --blue-1: #95bbfa;
+  --blue-2: #a1c3fb;
+  --blue-3: #accafb;
+  --blue-4: #b8d2fc;
+  --blue-5: #c4d9fc;
+
+  --green: #a6e3a1;
+  --red: #f38ba8;
 }
 
 body {
@@ -83,8 +100,12 @@ h3 {
   font-size: 1.5rem;
 }
 
-h1, h2, h3, p, button {
+h1, p, button {
   color: var(--text);
+}
+
+h2, h3 {
+  color: var(--accent);
 }
 
 .number-font {

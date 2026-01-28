@@ -36,6 +36,7 @@ export default function SettingsModal({ showModal, setEntries } : Props) {
                             <button id={selectedTheme === "system" ? "selected-theme" : ""} onClick={() => selectTheme("system")}>System</button>
                             <button id={selectedTheme === "light" ? "selected-theme" : ""} onClick={() => selectTheme("light")}>Light</button>
                             <button id={selectedTheme === "dark" ? "selected-theme" : ""} onClick={() => selectTheme("dark")}>Dark</button>
+                            <button id={selectedTheme === "catppuccin-mocha" ? "selected-theme" : ""} onClick={(() => selectTheme("catppuccin-mocha"))}>Catppuccin</button>
                         </div>
                     </div>
                     <div id="settings-import-and-export">
