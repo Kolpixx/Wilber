@@ -7,6 +7,14 @@
     color: var(--text);
 }
 
+#edit-entry-modal-options {
+    & > div {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+    }
+}
+
 #edit-entry-modal-buttons {
     display: flex;
     justify-content: space-between;
