@@ -1,15 +1,16 @@
 import { X } from "lucide-react";
-import { getCurrentTheme, switchTheme } from "../../../../utils";
+import { downloadEntries, getCurrentTheme, importEntries, switchTheme } from "../../../../utils";
 import { useEffect, useState } from "react";
 import type { Themes } from "../../../../consts";
 
 import './SettingsModal.css'
 
 type Props = {
-    showModal: Function
+    showModal: Function,
+    setEntries: Function
 }
 
-export default function SettingsModal({ showModal } : Props) {
+export default function SettingsModal({ showModal, setEntries } : Props) {
     const [selectedTheme, selectTheme] = useState<Themes>(getCurrentTheme());
 
     useEffect(() => {
@@ -35,6 +36,13 @@ export default function SettingsModal({ showModal } : Props) {
                             <button id={selectedTheme === "system" ? "selected-theme" : ""} onClick={() => selectTheme("system")}>System</button>
                             <button id={selectedTheme === "light" ? "selected-theme" : ""} onClick={() => selectTheme("light")}>Light</button>
                             <button id={selectedTheme === "dark" ? "selected-theme" : ""} onClick={() => selectTheme("dark")}>Dark</button>
+                        </div>
+                    </div>
+                    <div id="settings-import-and-export">
+                        <h3>Import & Export</h3>
+                        <div id="settings-import-and-export-buttons">
+                            <button onClick={() => importEntries(setEntries)}>Import</button>
+                            <button onClick={() => downloadEntries()}>Export</button>
                         </div>
                     </div>
                 </div>

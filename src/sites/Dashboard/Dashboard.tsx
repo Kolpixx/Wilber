@@ -26,7 +26,7 @@ export default function Dashboard() {
     return (
         <div id="dashboard">
             {showingAddEntryModal && <AddEntryModal showAddEntryModal={showAddEntryModal} setEntries={setEntries} />}
-            {showingSettingsModal && <SettingsModal showModal={showSettingsModal} />}
+            {showingSettingsModal && <SettingsModal showModal={showSettingsModal} setEntries={setEntries} />}
             <header>
                 <h1>Wilber</h1>
                 <button id="settings-button" className="icon-button" onClick={() => showSettingsModal(true)}>

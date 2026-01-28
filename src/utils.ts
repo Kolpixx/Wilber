@@ -114,7 +114,6 @@ export function importEntries(setEntries: Function) {
 
                 try {
                     result = JSON.stringify(JSON.parse(result as string)); // to make it one line lol
-                    console.log(result);
                 } catch {
                     throw new Error("It's not even a valid JSON");
                 }
@@ -132,10 +131,9 @@ export function importEntries(setEntries: Function) {
                     throw new Error("Input file doesn't match regex");
                 }
             });
-
             reader.readAsText(file);
         }
     });
-
+    
     inputElement.click();
 }
