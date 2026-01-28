@@ -8,6 +8,12 @@
     box-sizing: border-box;
 }
 
+body {
+  --h1-font: "Palanquin Dark";
+  --default-font: "Inter";
+  --number-font: "JetBrains Mono";
+}
+
 body[data-theme="light"] {
   --background: #ffffff;
   --background-1: #ffffff;
@@ -17,9 +23,6 @@ body[data-theme="light"] {
 
   --accent: #000000;
   --text: #000000;
-  --h1-font: "Palanquin Dark";
-  --default-font: "Inter";
-  --number-font: "JetBrains Mono";
 
   --background-blue: #C5CFFF;
 
@@ -43,9 +46,6 @@ body[data-theme="dark"] {
 
   --accent: #FFFFFF;
   --text: #FFFFFF;
-  --h1-font: "Palanquin Dark";
-  --default-font: "Inter";
-  --number-font: "JetBrains Mono";
 
   --background-blue: #C5CFFF;
 
