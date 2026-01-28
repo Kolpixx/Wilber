@@ -1,6 +1,6 @@
 # Wilber
 
-Wilber is a free & open-source Sobriety tracker running fully local inside your browser.
+Wilber is a free & open-source sobriety tracker running fully local inside your browser.
 
 ## Images
 
