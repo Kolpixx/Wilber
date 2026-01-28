@@ -25,7 +25,7 @@
     height: 55px;
     overflow: hidden;
     border-radius: 10px;
-    background: rgb(197, 207, 255);
+    background: var(--blue-bg);
     position: relative;
 }
 

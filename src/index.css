@@ -30,6 +30,7 @@ body[data-theme="light"] {
   --blue-3: #6D85FF;
   --blue-4: #869AFF;
   --blue-5: #9AABFF;
+  --blue-bg: #C5CFFF;
 
   --green: #36E339;
   --red: #FF2929;
@@ -51,6 +52,7 @@ body[data-theme="dark"] {
   --blue-3: #6D85FF;
   --blue-4: #869AFF;
   --blue-5: #9AABFF;
+  --blue-bg: #C5CFFF;
 
   --green: #1f811f;
   --red: #811f1f;
@@ -72,6 +74,7 @@ body[data-theme="catppuccin-mocha"] {
   --blue-3: #accafb;
   --blue-4: #b8d2fc;
   --blue-5: #c4d9fc;
+  --blue-bg: #d3e1f8;
 
   --green: #a6e3a1;
   --red: #f38ba8;
@@ -93,6 +96,7 @@ body[data-theme="rose-pine"] {
   --blue-3: #59a7c6;
   --blue-4: #71b3ce;
   --blue-5: #89c0d6;
+  --blue-bg: #c1dfeb;
 
   --green: #9ccfd8;
   --red: #eb6f92;
@@ -114,6 +118,7 @@ body[data-theme="alien"] {
   --blue-3: #07ff6e;
   --blue-4: #2bff83;
   --blue-5: #4eff98;
+  --blue-bg: #abffce;
 
   --green: #9ccfd8;
   --red: #eb6f92;
