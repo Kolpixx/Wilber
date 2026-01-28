@@ -2,14 +2,9 @@ import type { Themes } from "./consts";
 
 export function addEntry(setEntries: Function, name: string, startDate?: Date) {
     const entries = getEntries();
-    const id = entries.length;
 
-    if (entries[id]) {
-        throw new Error(`An entry with the id "${name}" already exists`);        
-    } else {
-        entries[id] = {name: name, attempts: [startDate?.getTime() || Date.now()]};
-        setEntries(entries);
-    }
+    entries.push({name: name, attempts: [startDate?.getTime() || Date.now()]});
+    setEntries(entries);
 }
 
 export function removeEntry(id: number, setEntries: Function) {
@@ -101,4 +96,46 @@ export function downloadEntries() {
     downloadElement.href = window.URL.createObjectURL(entriesBlob);
     downloadElement.download = "entries.json";
     downloadElement.click();
+}
+
+export function importEntries(setEntries: Function) {
+    const inputElement: HTMLInputElement = document.createElement("input");
+    inputElement.type = "file";
+    inputElement.accept = "application/json";
+
+    inputElement.addEventListener("change", () => {
+        if (inputElement.files !== null) {
+            const file = inputElement.files[0];
+            const reader = new FileReader();
+            const regex = /\[.*\{.*"name":.*".*",.*"attempts":.*\[.*\d.*\].*\}.*\]/i;
+
+            reader.addEventListener("load", () => {
+                let result = reader.result;
+
+                try {
+                    result = JSON.stringify(JSON.parse(result as string)); // to make it one line lol
+                    console.log(result);
+                } catch {
+                    throw new Error("It's not even a valid JSON");
+                }
+
+                if (regex.test(result as string)) {
+                    const importedArray: Array<Object> = JSON.parse(result);
+                    const entries = getEntries();
+
+                    importedArray.forEach((entryObject) => {
+                        entries.push(entryObject);
+                    });
+                    
+                    setEntries(entries);
+                } else {
+                    throw new Error("Input file doesn't match regex");
+                }
+            });
+
+            reader.readAsText(file);
+        }
+    });
+
+    inputElement.click();
 }
