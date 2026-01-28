@@ -10,7 +10,7 @@ Wilber is a free & open-source sobriety tracker running fully local inside your 
 
 ## Contributing
 
-Contributions are always welcome! To add a new theme you can head to the [consts.ts](./src/consts.ts) file, add the identifier and display name (["IDENTIFIER", "DISPLAY_NAME"]) to the themes Array and set the values of your theme in the [index.css](./src/index.css) file.
+Contributions are always welcome! To add a new theme you can head to the [consts.ts](./src/consts.ts) file, add the identifier and display name `(["IDENTIFIER", "DISPLAY_NAME"])` to the themes Array and set the values of your theme in the [index.css](./src/index.css) file.
 
 ```css
 body[data-theme="IDENTIFIER"] {
