@@ -1,1 +1,4 @@
-export type Themes = "system" | "light" | "dark" | "catppuccin-mocha";
+export const themes = [["system", "System"], ["light", "Light"], ["dark", "Dark"], ["catppuccin-mocha", "Catppuccin"]] as const;
+export const themeMap = new Map(themes);
+
+export type Theme = typeof themes[number][0];

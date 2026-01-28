@@ -1,7 +1,7 @@
 import { X } from "lucide-react";
-import { downloadEntries, getCurrentTheme, importEntries, switchTheme } from "../../../../utils";
+import { downloadEntries, getCurrentTheme, getThemeIds, importEntries, switchTheme } from "../../../../utils";
 import { useEffect, useState } from "react";
-import type { Themes } from "../../../../consts";
+import { themeMap, type Theme } from "../../../../consts";
 
 import './SettingsModal.css'
 
@@ -11,7 +11,7 @@ type Props = {
 }
 
 export default function SettingsModal({ showModal, setEntries } : Props) {
-    const [selectedTheme, selectTheme] = useState<Themes>(getCurrentTheme());
+    const [selectedTheme, selectTheme] = useState<Theme>(getCurrentTheme());
 
     useEffect(() => {
         switchTheme(selectedTheme);
@@ -33,10 +33,11 @@ export default function SettingsModal({ showModal, setEntries } : Props) {
                     <div id="settings-themes">
                         <h3>Theme</h3>
                         <div id="settings-theme-selector-wrapper">
-                            <button id={selectedTheme === "system" ? "selected-theme" : ""} onClick={() => selectTheme("system")}>System</button>
-                            <button id={selectedTheme === "light" ? "selected-theme" : ""} onClick={() => selectTheme("light")}>Light</button>
-                            <button id={selectedTheme === "dark" ? "selected-theme" : ""} onClick={() => selectTheme("dark")}>Dark</button>
-                            <button id={selectedTheme === "catppuccin-mocha" ? "selected-theme" : ""} onClick={(() => selectTheme("catppuccin-mocha"))}>Catppuccin</button>
+                            {
+                                getThemeIds().map((theme, index) => {
+                                    return <button key={index} id={selectedTheme === theme ? "selected-theme" : ""} onClick={() => selectTheme(theme)}>{themeMap.get(theme)}</button>
+                                })
+                            }
                         </div>
                     </div>
                     <div id="settings-import-and-export">

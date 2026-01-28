@@ -1,4 +1,4 @@
-import type { Themes } from "./consts";
+import { themes, type Theme } from "./consts";
 
 export function addEntry(setEntries: Function, name: string, startDate?: Date) {
     const entries = getEntries();
@@ -60,7 +60,7 @@ export function getTimeDifferences(timeDifference: number) {
     return timeDifferences;
 }
 
-export function switchTheme(chosenTheme: Themes) {
+export function switchTheme(chosenTheme: Theme) {
     const preferences = JSON.parse(localStorage.getItem("preferences") || "{}");
     preferences.theme = chosenTheme;
     localStorage.setItem("preferences", JSON.stringify(preferences));
@@ -77,9 +77,16 @@ export function getSystemTheme() {
     }
 }
 
+export function getThemeIds() {
+    const themeIds: Array<Theme> = [];
+    themes.forEach((theme) => themeIds.push(theme[0]));
+    
+    return themeIds;
+}
+
 export function getCurrentTheme() {
     const preferences = JSON.parse(localStorage.getItem("preferences") || '{"theme": "light"}');
-    const theme: Themes = preferences.theme;
+    const theme: Theme = preferences.theme;
 
     return theme;
 }
