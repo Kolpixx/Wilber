@@ -21,15 +21,15 @@
 
 #settings-theme-selector-wrapper {
     display: flex;
-    height: 42px;
     border: 2px solid var(--border);
     background: var(--background-1);
     border-radius: 5px;
-    overflow: hidden;
-    max-width: fit-content;
+    overflow-x: auto;
 
     & > button {
         width: 128px;
+        height: 42px;
+        flex-shrink: 0;
         font-size: 16px;
         border: none;
         font-family: "Inter", system-ui;
