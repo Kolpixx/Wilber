@@ -77,6 +77,27 @@ body[data-theme="catppuccin-mocha"] {
   --red: #f38ba8;
 }
 
+body[data-theme="rose-pine"] {
+  --background: #191724;
+  --background-1: #1f1d2e;
+  --background-hover: rgba(255, 255, 255, .2);
+
+  --border: #2a273f;
+
+  --accent: #e0def4;
+  --text: #e0def4;
+
+  --blue: #31748f;
+  --blue-1: #3987a7;
+  --blue-2: #429abe;
+  --blue-3: #59a7c6;
+  --blue-4: #71b3ce;
+  --blue-5: #89c0d6;
+
+  --green: #9ccfd8;
+  --red: #eb6f92;
+}
+
 body {
   background: var(--background);
   min-height: 100vh;
