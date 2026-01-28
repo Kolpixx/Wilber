@@ -98,6 +98,27 @@ body[data-theme="rose-pine"] {
   --red: #eb6f92;
 }
 
+body[data-theme="alien"] {
+  --background: #002413;
+  --background-1: #004e2a;
+  --background-hover: rgba(255, 255, 255, .2);
+
+  --border: #2a273f;
+
+  --accent: #c0ffe1;
+  --text: #c0ffe1;
+
+  --blue: #009c41;
+  --blue-1: #00bf50;
+  --blue-2: #00e35e;
+  --blue-3: #07ff6e;
+  --blue-4: #2bff83;
+  --blue-5: #4eff98;
+
+  --green: #9ccfd8;
+  --red: #eb6f92;
+}
+
 body {
   background: var(--background);
   min-height: 100vh;

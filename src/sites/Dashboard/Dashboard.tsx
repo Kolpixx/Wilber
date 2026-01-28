@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Cog } from 'lucide-react';
+import { getCurrentTheme } from '../../utils';
 import Entry from './components/Entry/Entry';
 import AddEntryButton from './components/AddEntryButton/AddEntryButton';
 import AddEntryModal from './components/AddEntryButton/components/AddEntryModal/AddEntryModal';
@@ -28,7 +29,7 @@ export default function Dashboard() {
             {showingAddEntryModal && <AddEntryModal showAddEntryModal={showAddEntryModal} setEntries={setEntries} />}
             {showingSettingsModal && <SettingsModal showModal={showSettingsModal} setEntries={setEntries} />}
             <header>
-                <h1>Wilber</h1>
+                {getCurrentTheme() !== "alien" ? <h1>Wilber</h1> : <img src="/assets/gifs/turningalien.gif" alt="turning alien" id="silly-turning-alien-gif"></img>}
                 <button id="settings-button" className="icon-button" onClick={() => showSettingsModal(true)}>
                     <Cog
                         size={42}
