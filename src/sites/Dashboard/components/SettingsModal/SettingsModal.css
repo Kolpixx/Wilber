@@ -24,7 +24,7 @@
     height: 42px;
     border: 2px solid var(--border);
     background: var(--background-1);
-    border-radius: 16px;
+    border-radius: 5px;
     overflow: hidden;
     max-width: fit-content;
 
