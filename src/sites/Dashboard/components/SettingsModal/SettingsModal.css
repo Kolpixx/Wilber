@@ -20,6 +20,7 @@
     background: var(--background-1);
     border-radius: 16px;
     overflow: hidden;
+    max-width: fit-content;
 
     & > button {
         width: 128px;
@@ -27,6 +28,7 @@
         border: none;
         font-family: "Inter", system-ui;
     }
+
     & > button:not(#selected-theme) {
         background: var(--background-1);
 
