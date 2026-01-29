@@ -24,7 +24,7 @@
     gap: 5px;
     align-items: center;
     font-size: 1.2rem;
-    font-family: 'Inter', system-ui;
+    font-family: var(--default-font), system-ui;
     font-weight: 500;
 }
 

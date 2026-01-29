@@ -6,7 +6,7 @@
     min-height: 100vh;
     gap: 15px;
     & h1 {
-        font-family: "Inter", system-ui;
+        font-family: var(--default-font), system-ui;
         text-overflow: ellipsis;
         line-height: 120%;
         overflow: hidden;

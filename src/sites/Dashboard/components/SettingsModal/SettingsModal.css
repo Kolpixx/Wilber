@@ -32,7 +32,7 @@
         flex-shrink: 0;
         font-size: 16px;
         border: none;
-        font-family: "Inter", system-ui;
+        font-family: var(--default-font), system-ui;
     }
 
     & > button:not(#selected-theme) {
