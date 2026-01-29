@@ -46,6 +46,7 @@
 
 #selected-theme {
     background: var(--blue-2);
+    color: var(--text-on-color);
     font-weight: 600;
 }
 
@@ -59,7 +60,7 @@
         background: var(--background-1);
         border-radius: 5px;
         border: 2px solid var(--border);
-        transition: 0.2s ease background;
+        transition: 0.2s ease background, 0.2s ease color;
         font-size: "Inter", system-ui;
         font-size: 16px;
         display: flex;
@@ -69,6 +70,7 @@
 
         &:hover {
             background: var(--blue-2);
+            color: var(--text-on-color);
         }
     }
 }

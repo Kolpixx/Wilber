@@ -17,6 +17,7 @@
         border: 2px solid var(--border);
         border-radius: 5px;
         transition: 0.2s ease background;
+        color: var(--text-on-color);
     }
 }
 
