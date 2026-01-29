@@ -140,3 +140,15 @@ export function importEntries(setEntries: Function) {
     
     inputElement.click();
 }
+
+export function dateToHTMLInputValueString(dateObject: Date) {
+    const pad = (num: number) => num.toString().padStart(2, '0')
+
+    const year = pad(dateObject.getFullYear());
+    const month = pad(dateObject.getMonth() + 1);
+    const day = pad(dateObject.getDate());
+    const hour = pad(dateObject.getHours());
+    const minute = pad(dateObject.getMinutes());
+
+    return `${year}-${month}-${day}T${hour}:${minute}`;
+}
