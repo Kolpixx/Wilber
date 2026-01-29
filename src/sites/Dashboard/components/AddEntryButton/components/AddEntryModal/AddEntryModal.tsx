@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { addEntry } from '../../../../../../utils';
+import { addEntry, dateToHTMLInputValueString } from '../../../../../../utils';
 import { X } from 'lucide-react';
 import Checkbox from '../../../../../../components/Checkbox/Checkbox';
 
@@ -72,6 +72,7 @@ export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) 
                                 id="add-entry-time-start-input"
                                 type="datetime-local"
                                 disabled={useCurrentTime}
+                                defaultValue={dateToHTMLInputValueString(new Date())}
                                 onChange={(e) => {setStartDate(new Date((e.target as HTMLInputElement).value) || new Date(0))}}
                             />
                         </div>
