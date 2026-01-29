@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Palanquin+Dark:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Palanquin+Dark:wght@400;500;600;700&family=Rock+Salt&display=swap');
 
 *,
 *::before,
@@ -127,6 +127,9 @@ body[data-theme="alien"] {
 
   --green: #9ccfd8;
   --red: #eb6f92;
+
+  --number-font: "Rock Salt";
+  --default-font: "Rock Salt";
 }
 
 body {
