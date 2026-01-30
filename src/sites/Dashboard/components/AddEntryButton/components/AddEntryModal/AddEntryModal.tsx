@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { addEntry, dateToHTMLInputValueString } from '../../../../../../utils';
 import { X } from 'lucide-react';
 import Checkbox from '../../../../../../components/Checkbox/Checkbox';
@@ -11,26 +11,22 @@ type Props = {
 }
 
 export default function AddEntryModal({ showAddEntryModal, setEntries }: Props) {
-    const [startDate, setStartDate] = useState<Date | null>();
+    const [startDate, setStartDate] = useState<Date | null>(new Date());
     const [name, setName] = useState<string | null>(null);
     const [useCurrentTime, setUseCurrentTime] = useState<boolean>(true);
     const [error, setError] = useState<string>();
 
     function submitEntry() {
-        if (name !== null && startDate !== null) {
+        if (name !== null && name !== "" && startDate !== null && !useCurrentTime) {
             addEntry(setEntries, name, startDate);
             showAddEntryModal(false);
-        } else if (name !== null && useCurrentTime) {
+        } else if (name !== null && name !== "" && useCurrentTime) {
             addEntry(setEntries, name);
             showAddEntryModal(false);
         } else {
             setError("Please fill out all fields")
         }
     }
-
-    useEffect(() => {
-        useCurrentTime && setStartDate(null);
-    }, [useCurrentTime]);
 
     return (
         <div className="modal-wrapper" onClick={(e) => {e.stopPropagation(); (e.target as HTMLElement).classList[0] === "modal-wrapper" && showAddEntryModal(false)}}>

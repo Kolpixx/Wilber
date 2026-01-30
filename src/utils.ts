@@ -2,9 +2,12 @@ import { themes, type Theme } from "./consts";
 
 export function addEntry(setEntries: Function, name: string, startDate?: Date) {
     const entries = getEntries();
-
-    entries.push({name: name, attempts: [startDate?.getTime() || Date.now()]});
-    setEntries(entries);
+    if (name !== null && name !== "") {
+        entries.push({name: name, attempts: [startDate?.getTime() || Date.now()]});
+        setEntries(entries);
+    } else {
+        throw new Error("No name was provided, can't add entry.")
+    }
 }
 
 export function removeEntry(id: number, setEntries: Function) {
