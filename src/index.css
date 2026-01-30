@@ -106,6 +106,7 @@ button {
 }
 
 .modal input {
+    font-family: var(--default-font);
     border: 2px solid var(--border);
     height: 44px;
     padding: 5px;
