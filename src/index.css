@@ -172,6 +172,7 @@ h2, h3 {
 }
 
 button {
+  font-family: var(--default-font);
   cursor: pointer;
 }
 
