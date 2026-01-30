@@ -1,11 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+import { getSystemTheme } from './utils'
 import Dashboard from './sites/Dashboard/Dashboard'
 import EntryDetail from './sites/EntryDetail/EntryDetail'
 
 import './index.css'
-import { getSystemTheme } from './utils'
+import './themes.css'
 
 const router = createBrowserRouter([
   { path: "/", element: <Dashboard />},

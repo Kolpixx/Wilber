@@ -1,0 +1,122 @@
+/* Light Theme */
+body[data-theme="light"] {
+  --background: #ffffff;
+  --background-1: #ffffff;
+  --background-hover: rgba(0, 0, 0, .2);
+
+  --border: #dadada;
+
+  --accent: #1b1b1b;
+  --text: #1b1b1b;
+  --text-on-color: #ffffff;
+
+  --blue: #2A4DFF;
+  --blue-1: #4160FF;
+  --blue-2: #536FFF;
+  --blue-3: #6D85FF;
+  --blue-4: #869AFF;
+  --blue-5: #9AABFF;
+  --blue-bg: #C5CFFF;
+
+  --green: #36E339;
+  --red: #FF2929;
+}
+
+/* Dark Theme */
+body[data-theme="dark"] {
+  --background: #1d1d1d;
+  --background-1: #292929;
+  --background-hover: rgba(255, 255, 255, .2);
+
+  --border: #363636;
+
+  --accent: #FFFFFF;
+  --text: #FFFFFF;
+  --text-on-color: #FFFFFF;
+
+  --blue: #2A4DFF;
+  --blue-1: #4160FF;
+  --blue-2: #536FFF;
+  --blue-3: #6D85FF;
+  --blue-4: #869AFF;
+  --blue-5: #9AABFF;
+  --blue-bg: #C5CFFF;
+
+  --green: #1f811f;
+  --red: #811f1f;
+}
+
+/* Catppuccin Mocha (Blue) Theme */
+body[data-theme="catppuccin-mocha"] {
+  --background: #1e1e2e;
+  --background-1: #313244;
+  --background-hover: rgba(255, 255, 255, .2);
+
+  --border: #45475a;
+
+  --accent: var(--blue);
+  --text: #cdd6f4;
+  --text-on-color: #1e1e2e;
+
+  --blue: #89b4fa;
+  --blue-1: #95bbfa;
+  --blue-2: #a1c3fb;
+  --blue-3: #accafb;
+  --blue-4: #b8d2fc;
+  --blue-5: #c4d9fc;
+  --blue-bg: #d3e1f8;
+
+  --green: #a6e3a1;
+  --red: #f38ba8;
+}
+
+/* Rosé Pine Theme */
+body[data-theme="rose-pine"] {
+  --background: #191724;
+  --background-1: #1f1d2e;
+  --background-hover: rgba(255, 255, 255, .2);
+
+  --border: #2a273f;
+
+  --accent: #e0def4;
+  --text: #e0def4;
+  --text-on-color: #e0def4;
+
+  --blue: #31748f;
+  --blue-1: #3987a7;
+  --blue-2: #429abe;
+  --blue-3: #59a7c6;
+  --blue-4: #71b3ce;
+  --blue-5: #89c0d6;
+  --blue-bg: #c1dfeb;
+
+  --green: #9ccfd8;
+  --red: #eb6f92;
+}
+
+/* Alien theme */
+body[data-theme="alien"] {
+  --background: #002413;
+  --background-1: #004e2a;
+  --background-hover: rgba(255, 255, 255, .2);
+
+  --border: #007740;
+
+  --accent: #c0ffe1;
+  --text: #c0ffe1;
+  --text-on-color: #002413;
+
+  --blue: #009c41;
+  --blue-1: #00bf50;
+  --blue-2: #00e35e;
+  --blue-3: #07ff6e;
+  --blue-4: #2bff83;
+  --blue-5: #4eff98;
+  --blue-bg: #abffce;
+
+  --green: #9ccfd8;
+  --red: #eb6f92;
+
+  --number-font: "Mynerve";
+  --default-font: "Mynerve";
+}
