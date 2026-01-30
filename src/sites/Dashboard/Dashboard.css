@@ -20,6 +20,10 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+
+    > h1 {
+        transform: translateY(-8px);
+    }
 }
 
 #dashboard-header-right {
