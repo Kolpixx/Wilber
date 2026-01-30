@@ -33,6 +33,7 @@
         font-size: 16px;
         border: none;
         font-family: var(--default-font), system-ui;
+        transition: 0.2s ease background;
     }
 
     & > button:not(#selected-theme) {
