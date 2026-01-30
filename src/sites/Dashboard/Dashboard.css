@@ -22,6 +22,12 @@
     justify-content: space-between;
 }
 
+#dashboard-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 #dashboard > main {
     display: flex;
     flex-wrap: wrap;

@@ -13,8 +13,8 @@ export default function AddEntryButton({ size, onClick } : Props) {
     return (
         <button id={`add-entry-button${size === "big" ? "-big" : ""}`} className="pointer" onClick={onClick}>
             <Plus
-                size={size === "big" ? 92 : 64}
-                strokeWidth={size === "big" ? 1 : 1.3}
+                size={size === "big" ? 92 : 55}
+                strokeWidth={size === "big" ? 1 : 1.5}
             />
         </button>
     )

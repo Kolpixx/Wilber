@@ -30,15 +30,18 @@ export default function Dashboard() {
             {showingSettingsModal && <SettingsModal showModal={showSettingsModal} setEntries={setEntries} />}
             <header>
                 {getCurrentTheme() !== "alien" ? <h1>Wilber</h1> : <img src="/assets/gifs/turningalien.gif" alt="turning alien" id="silly-turning-alien-gif"></img>}
-                <button id="settings-button" className="icon-button" onClick={() => showSettingsModal(true)}>
-                    <Cog
-                        size={42}
-                        strokeWidth={2}
-                    />
-                </button>
+                <div id="dashboard-header-right">
+                    {entries.length !== 0 && <AddEntryButton size="small" onClick={() => showAddEntryModal(true)} />}
+                    <button id="settings-button" className="icon-button" onClick={() => showSettingsModal(true)}>
+                        <Cog
+                            size={42}
+                            strokeWidth={2}
+                        />
+                    </button>
+                </div>
             </header>
             <main>
-                <AddEntryButton size={entries.length === 0 ? "big" : "small"} onClick={() => showAddEntryModal(true)} />
+                {entries.length === 0 && <AddEntryButton size={"big"} onClick={() => showAddEntryModal(true)}></AddEntryButton>}
                 {entries.map((_key, i) => 
                     <Entry
                         key={i}
