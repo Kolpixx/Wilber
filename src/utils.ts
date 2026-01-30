@@ -12,7 +12,6 @@ export function addEntry(setEntries: Function, name: string, startDate?: Date) {
 
 export function removeEntry(id: number, setEntries: Function) {
     const entries = getEntries();
-    console.log(entries);
 
     if (entries[id]) {
         entries.splice(id, 1);
