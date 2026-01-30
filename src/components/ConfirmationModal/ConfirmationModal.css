@@ -35,17 +35,17 @@
 }
 
 .confirmation-buttons-confirm {
-    background: var(--blue-2);
-
-    &:hover {
-        background: var(--blue-1);
-    }
-}
-
-.confirmation-buttons-abort {
     background: color-mix(in srgb, var(--red) 100%, white 20%);
 
     &:hover {
         background: var(--red);
+    }
+}
+
+.confirmation-buttons-abort {
+    background: var(--blue-2);
+
+    &:hover {
+        background: var(--blue-1);
     }
 }
