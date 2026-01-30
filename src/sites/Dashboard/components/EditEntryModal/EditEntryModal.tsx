@@ -19,7 +19,7 @@ export default function EditEntryModal({ showModal, id, setEntries } : Props) {
     return (
         <div className="modal-wrapper" onClick={(e) => {e.stopPropagation(); (e.target as HTMLElement).classList[0] === "modal-wrapper" && showModal(false)}}>
             <div className="modal" id="edit-entry-modal">
-                {showingRemoveConfirmationModal && <ConfirmationModal confirmFunction={() => {removeEntry(id, setEntries); showModal(false)}} showModal={showRemoveConfirmationModal} text={`Are you sure you want to remove the entry "${initialName}"permanently?`} />}
+                {showingRemoveConfirmationModal && <ConfirmationModal confirmFunction={() => {removeEntry(id, setEntries); showModal(false)}} showModal={showRemoveConfirmationModal} text={`Are you sure you want to remove the entry "${initialName}" permanently?`} />}
                 <div className="modal-head">
                     <h2>Edit Entry</h2>
                     <button className="icon-button" onClick={() => showModal(false)}>
