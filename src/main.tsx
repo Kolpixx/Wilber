@@ -4,13 +4,15 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import { getSystemTheme } from './utils'
 import Dashboard from './sites/Dashboard/Dashboard'
 import EntryDetail from './sites/EntryDetail/EntryDetail'
+import NotFound from './sites/NotFound/NotFound'
 
 import './index.css'
 import './themes.css'
 
 const router = createBrowserRouter([
   { path: "/", element: <Dashboard />},
-  { path: "/entry/:id", element: <EntryDetail />}
+  { path: "/entry/:id", element: <EntryDetail />},
+  { path: "*", element: <NotFound />}
 ]);
 
 const defaultPreferences = {

@@ -1,0 +1,31 @@
+#not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    gap: 12px;
+    color: var(--text);
+}
+
+#not-found > span {
+    font-family: var(--default-font);
+    font-size: 3rem;
+    font-weight: 600;
+}
+
+#not-found > button {
+    border: 3px solid var(--border);
+    border-radius: 10px;
+    background: var(--background-1);
+    height: 75px;
+    width: 300px;
+    transition: .2s ease background, .2s ease color;
+    font-family: var(--default-font);
+    font-size: 20px;
+
+    &:hover {
+        background: var(--blue-1);
+        color: var(--background);
+    }
+}
