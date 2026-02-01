@@ -94,6 +94,30 @@ body[data-theme="rose-pine"] {
   --red: #eb6f92;
 }
 
+/* Evergarden Fall Theme */
+body[data-theme="evergarden-fall"] {
+  --background: #232a2e;
+  --background-1: #2b3337;
+  --background-hover: rgba(248, 249, 232, .2);
+
+  --border: #374145;
+
+  --accent: #cbe3b3;
+  --text: #f8f9e8;
+  --text-on-color: #1c2225;
+
+  --blue:   #6FB8A8;
+  --blue-1: #7EC4B4;
+  --blue-2: #8DD0C0;
+  --blue-3: #9CDBCB;
+  --blue-4: #A8E1D4;
+  --blue-5: #B3E6DB;
+  --blue-bg:#D6F3EE;
+
+  --green: #cbe3b3;
+  --red: #f57f82;
+}
+
 /* Alien theme */
 body[data-theme="alien"] {
   --background: #002413;
