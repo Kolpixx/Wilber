@@ -23,10 +23,9 @@
 .progress-bar-wrapper {
     width: 350px;
     height: 55px;
-    overflow: hidden;
-    border-radius: 10px;
     background: var(--blue-bg);
     position: relative;
+    border-radius: 10px 8px 8px 10px;
 }
 
 .progress-bar {
@@ -34,4 +33,5 @@
     height: 100%;
     position: relative;
     overflow: hidden;
+    border-radius: 8px 0 0 8px;
 }
